@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Calibri; 
+}
+.container{
+    width:95%;
+    color:rgb(255, 255, 255);
+    margin: 0.1vw 0.1vw;
+}
+.navbar{
+    background-color: #0a4b09;
+    width:100%;
+    overflow: hidden;
+    line-height: 26vw;
+    /*box-shadow: 0 0.2vw 1vw rgba(0,0,0, 1);*/
+    position:fixed;
+    z-index: 2;
+}
+#logo{
+    height: 5vw;
+    width: 5vw;
+    margin : 0.5% 3%;
+    float:left;
+    /*box-shadow: 0 0.2vw 1vw rgba(0,0,0, 1);*/
+}
+.titre{
+    margin: -147px 18px -150px 14px;
+    font-size: 30px;
+    color: #f7f9fb;
+    text-decoration: none;
+    float : left;
+    transition: 1s;
+}
+.titre:hover{
+    transition: 1s;
+    color: rgb(189, 247, 173);
+}
+.menu{
+    float:right;
+}
+.menu li{
+    float:left;
+    width:9.5vw;
+    height:1vw;
+    line-height: 6.2vw;
+    text-align: center;
+    list-style-type: none;       
+}
+.menu li a{
+    color: #f7f9fb;
+    font-size: 1vw;
+    text-decoration: none; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.menu li a:hover{        
+    text-decoration: none;  
+    color: rgb(189, 247, 173);
+}
+.Accueil{
+    padding: 40% 20%;
+}
+.Apropos{
+    padding: 40% 16%;
+}
+.i-1{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(9, 79, 51, 0.73)), url('res/img1.png');
+    
+    width:100%;
+    height: 715px;
+    background-size: cover;
+}
+.titre-i-1{
+    text-align: center;
+    font-size: 60px;
+    padding-top:200px ;
+    color:#f7f9fb;
+}
