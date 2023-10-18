@@ -78,6 +78,7 @@
     font-size: 60px;
     padding-top:200px ;
     color:#f7f9fb;
+    margin-bottom: 5%;
 }
 #container-connexion{
     width:400px;
@@ -166,4 +167,22 @@ h3 {
 
     margin-bottom: 20px; 
 
+}
+.btn-create, .btn-connexion{
+    margin-right: 2%;
+    background-color: #0d6efd;
+    text-align: center;
+    border: solid 2px #0d6efd;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    padding: 1.1%;
+}
+.btn-create:hover, .btn-connexion:hover{
+    background-color: #0a58ca;
+    border-color: #0a58ca;
+    transition: 1s;
+}
+.btn-create{
+    margin-left: 40%;
 }
