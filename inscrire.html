@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head lang="fr">
+        <meta charset="UTF-8">
+        <title>Mise Au Vert</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="res/">
+    </head>
+    <body>
+        <header id="header">
+            <div class="navbar">
+                <div class="container">
+                    <div>
+                        <a href="index"><img src="res/logo.png" alt="logo" id="logo"></a>
+                    </div>
+                    <div>
+                        <a class="titre" href="index.html">La Mise Au Vert</a>
+                    </div>
+                    <div class="navbar_links">
+                        <ul class="menu">
+                            <li><a class="Accueil" href="index.html">Accueil</a></li>
+                            <li><a class="Apropos" href="apropos.html">à propos</a></li>
+                            <li><a class="Service">Services</a></li>
+                            <li><a class="connexion" href="Connexion.html">se connecter</a></li>
+                            <li><a class="inscrire" href="inscrire.html">s'inscrire</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+        <div id="container-connexion">
+            <form>
+            <h1>S'inscrire</h1>
+            <br>
+            
+            <label><b>Nom</b></label>
+            <input type="text" placeholder="Entrer le nom " name="nom" required>
+           
+            <label><b>Prénom</b></label>
+            <input type="text" placeholder="Entrer le prénom" name="prenom" required>
+
+            <label><b>Email</b></label>
+            <input type="text" placeholder="Entrer votre email" name="email" required>
+
+            <label><b>Date de Naissance</b></label><br><br>
+            <input type="date" placeholder="Entrer votre" name="username" required><br><br>
+
+            <label><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+            <label><b>Saissez à nouveau votre mot de passe</b></label>
+            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+                <input type="checkbox" name="condition">
+                <label for="condition"><b>J'accepte les conditions générales</b></label>
+                
+            <input type="submit" id='submit' value='Créer un compte'>
+            
+            
+            </form>
+            </div>
+    </body>
+</html>
