@@ -94,7 +94,7 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    }
    #container-connexion h1{
-    width: 38%;
+    text-align: center;
     margin: 0 auto;
     padding-bottom: 10px;
    }
@@ -161,7 +161,7 @@ h2 {
 }
 h3 {
 
-    font-size: 28px; 
+    font-size: 20px; 
 
     color: #333;
 
@@ -186,3 +186,19 @@ h3 {
 .btn-create{
     margin-left: 40%;
 }
+.apr-1{
+    margin: 2vw 10vw;
+    display: flex;
+
+}
+.apr-1 p{
+    margin-left: 5vw;
+}
+.apr-1 img{
+    width: 13.5vw;
+    height: 13.5vw;
+}
+.apr-2 h3{
+    margin-left: 3vw;
+}
+
