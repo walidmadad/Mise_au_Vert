@@ -191,23 +191,30 @@ h3 {
     margin: 2vw 10vw;
     display: flex;
 }
-.apr-2-1-1{
+.apr-2-1-1, .apr-2-1-2{
     display: flex;
     align-items: center;
-    margin: 2vw 6vw;
+    margin: 4vw 6vw;
 }
 .apr-2-1-1 img{
     margin-right: 4vw;
     width: 28.5vw;
    
 }
-.apr-2-1-2{
+.apr-2-1-2 figure{
+    margin-left: 8.5vw;
+    
+}
+.apr-2-1-2 figure img{
+    width: 28.5vw;
+}
+.apr-2-1-2-1{
     border: solid 2px black;
     padding: 10px;
     width: 280px;
 }
-.apr-2-1-2 p{
-    
+.apr-2-1-2-1 h4{
+    color: #0a4b09;
 }
 .apr-1 p{
     margin-left: 5vw;
