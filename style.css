@@ -135,7 +135,7 @@
 
 h1 {
 
-    font-size: 28px; 
+    font-size: 34px; 
 
     color: #333;
 
@@ -152,7 +152,7 @@ p {
 
 }
 h2 {
-    font-size: 28px; 
+    font-size: 30px; 
 
     color: #333;
 
@@ -161,7 +161,7 @@ h2 {
 }
 h3 {
 
-    font-size: 20px; 
+    font-size: 28px; 
 
     color: #333;
 
@@ -187,9 +187,27 @@ h3 {
     margin-left: 40%;
 }
 .apr-1{
+    
     margin: 2vw 10vw;
     display: flex;
-
+}
+.apr-2-1-1{
+    display: flex;
+    align-items: center;
+    margin: 2vw 6vw;
+}
+.apr-2-1-1 img{
+    margin-right: 4vw;
+    width: 28.5vw;
+   
+}
+.apr-2-1-2{
+    border: solid 2px black;
+    padding: 10px;
+    width: 280px;
+}
+.apr-2-1-2 p{
+    
 }
 .apr-1 p{
     margin-left: 5vw;
