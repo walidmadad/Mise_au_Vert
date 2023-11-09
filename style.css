@@ -25,8 +25,8 @@
     
 }
 .titre{
-    margin: -147px 18px -150px 14px;
-    font-size: 30px;
+    margin: -9.832775919732441vw 1.2040133779264215vw -10.033444816053512vw 0.9364548494983278vw;
+    font-size:  2.0066889632107023vw;
     color: #f7f9fb;
     text-decoration: none;
     float : left;
@@ -75,7 +75,7 @@
 }
 .titre-i-1{
     text-align: center;
-    font-size: 60px;
+    font-size: 4.013377926421405vw;
     padding-top:17% ;
     color:#f7f9fb;
     margin-bottom: 7%;
@@ -102,7 +102,7 @@
     padding-bottom: 10px;
    }
 
-   input[type=text], input[type=password] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -112,7 +112,7 @@
    }
    
 
-   input[type=submit] {
+input[type=submit] {
     background-color: #53af57;
     color: white;
     padding: 14px 20px;
@@ -121,59 +121,43 @@
     cursor: pointer;
     width: 100%;
    }
-   input[type=submit]:hover {
+input[type=submit]:hover {
     background-color: white;
     color: #53af57;
     border: 1px solid #53af57;
-   }
+}
 
-   .content {
-
+.content {
     padding: 120px;
-
 }
 
 h1 {
-
     font-size: 34px; 
-
     color: #333;
-
     margin-bottom: 20px; 
-
 }
 p {
-
     font-size: 16px; 
-
     line-height: 1.6; 
-
     margin-bottom: 20px;
-
 }
 h2 {
     font-size: 30px; 
-
     color: #333;
-
     margin-bottom: 20px;
 
 }
 h3 {
-
     font-size: 28px; 
-
     color: #333;
-
     margin-bottom: 20px; 
-
 }
 .btn-create, .btn-connexion{
     margin-right: 2%;
     background-color: #0d6efd;
     text-align: center;
-    border: solid 2px #0d6efd;
-    border-radius: 12px;
+    border: solid 0.13377926421404682vw #0d6efd;
+    border-radius: 0.802675585284281vw;
     color: #fff;
     text-decoration: none;
     padding: 1.1%;
@@ -214,7 +198,7 @@ h3 {
     width: 280px;
 }
 .apr-2-1-2-1 h4{
-    color: #0a4b09;
+    color: #168b14;
 }
 .apr-1 p{
     margin-left: 5vw;
