@@ -11,7 +11,7 @@
 
 .container {
     width: 95%;
-    color: #fff;
+    /*color: #fff;*/
     margin: 0.1vw 0.1vw;
 }
 
@@ -111,9 +111,6 @@
     background: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(9, 79, 51, 0.73));
     z-index: 2;
 }
-
-
-
 .titre-i-1 {
     text-align: center;
     font-size: 4.01vw;
@@ -125,6 +122,71 @@
     margin-bottom: 7%;
     z-index: 2;
 }
+
+
+
+.pourquoi-nous-choisir {
+    background-color: #f7f9fb;
+    padding: 50px 0;
+    text-align: center;
+}
+
+
+.temoignages {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+.container-temoignages{
+    display: flex;
+}
+.temoignage {
+    margin-top: 20px;
+    text-transform: uppercase;
+    width: 26.755852842809364vw;
+    margin: auto auto;
+    color: #3b3a3a;
+    padding: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.temoignage a img{
+    width:20px;
+    cursor:pointer;
+}
+.btn-g, .btn-d{
+    display: flex;
+}
+.temoignage p {
+    font-style: italic;
+}
+
+.temoignage .auteur {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.nos-valeurs {
+    background-color: #f7f9fb;
+    padding: 50px 0;
+    text-align: center; 
+    display: flex;
+}
+.t-1{
+
+}
+
+
+.nos-valeurs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nos-valeurs li {
+    margin-top: 15px;
+}
+
+
+
 
 #container-connexion{
     width:400px;
