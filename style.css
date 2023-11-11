@@ -153,8 +153,20 @@
     width:20px;
     cursor:pointer;
 }
-.btn-g, .btn-d{
+.temoignage a{
+    cursor: pointer;
+    color: #333;
+}
+.temoignage a:hover{
+    color: #0a58ca;
+}
+.btn, .btn-d, .btn-g{
     display: flex;
+    justify-content: space-between;
+}
+.btn-d{
+    margin-left: auto;
+   
 }
 .temoignage p {
     font-style: italic;
