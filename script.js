@@ -17,28 +17,27 @@ setInterval(nextSlide, 3000);
 
 showSlide(currentIndex);
 
-
+/////////////////////////////////////////
 
 
 let currentIndex2 = 0;
 const temoignages = document.querySelectorAll('.temoignage');
 
 function showTemoignage(index) {
-            temoignages.forEach((temoignage, i) => {
-                temoignage.style.display = i === index ? 'block' : 'none';
-            });
-        }
+    temoignages.forEach((temoignage, i) => {
+    temoignage.style.display = i === index ? 'block' : 'none';
+    });
+}
 
-        function prevTemoignage() {
-            currentIndex = (currentIndex - 1 + temoignages.length) % temoignages.length;
-            showTemoignage(currentIndex);
-        }
+function prevTemoignage() {
+    currentIndex2 = (currentIndex2 - 1 + temoignages.length) % temoignages.length;
+    showTemoignage(currentIndex2);
+}
 
-        function nextTemoignage() {
-            currentIndex = (currentIndex + 1) % temoignages.length;
-            showTemoignage(currentIndex);
-        }
+function nextTemoignage() {
+    currentIndex2 = (currentIndex2 + 1 ) % temoignages.length;
+    showTemoignage(currentIndex2);
+}
 
-        // Afficher le premier témoignage au chargement de la page
-        showTemoignage(currentIndex);
+showTemoignage(currentIndex2);
     

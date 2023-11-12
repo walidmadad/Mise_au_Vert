@@ -129,8 +129,29 @@
     background-color: #f7f9fb;
     padding: 50px 0;
     text-align: center;
+    
 }
-
+.container-pourquoi{
+    width: 50.755852842809364vw;
+    margin: 4vh auto;
+    color: #3b3a3a;
+    padding: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22); 
+    min-height: 250px;
+}
+.pourquoi2{
+    display: flex;
+}
+.container-pourquoi img{
+    width: 22vw;
+    padding:0 2vw
+}
+.container-pourquoi h2{
+    text-transform: uppercase;
+}
+.container-pourquoi p{
+    padding:0 2vw
+}
 
 .temoignages {
     background-color: #fff;
@@ -143,11 +164,11 @@
 .temoignage {
     margin-top: 20px;
     text-transform: uppercase;
-    width: 26.755852842809364vw;
+    width: 42.755852842809364vw;
     margin: auto auto;
     color: #3b3a3a;
     padding: 20px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22); 
 }
 .temoignage a img{
     width:20px;
@@ -164,10 +185,11 @@
     display: flex;
     justify-content: space-between;
 }
-.btn-d{
-    margin-left: auto;
-   
+.btn {
+    display: flex;
+    width: 100%; 
 }
+
 .temoignage p {
     font-style: italic;
 }
@@ -183,8 +205,18 @@
     text-align: center; 
     display: flex;
 }
-.t-1{
-
+.NV-1 {
+    display: flex;
+    margin-top: 20px;
+    text-transform: uppercase;
+    width: 26.755852842809364vw;
+    margin: auto auto;
+    color: #3b3a3a;
+    padding: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22); 
+}
+.t-title{
+    font-size: 2vw;
 }
 
 
@@ -331,3 +363,12 @@ h3 {
     margin-left: 3vw;
 }
 
+footer{
+    height: 18vw;
+    background-color:#333;
+}
+.cpy{
+    text-align: center;
+    color: #ccc;
+    
+}
