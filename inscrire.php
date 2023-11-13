@@ -22,7 +22,7 @@ $stmt = $conn->prepare("INSERT INTO information_account_client (nom_client, pren
 $stmt->bind_param("sssss", $nom, $prenom, $email, $date_de_naissance, $password_hasher);
 
 if ($stmt->execute()) {
-    echo "";
+    header('location: espaceClient.html');
 } else {
     echo "Erreur lors de l'enregistrement : " . $stmt->error;
 }

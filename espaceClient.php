@@ -30,23 +30,7 @@
                 </div>
             </div>
         </header>
-        <section id="container-connexion">
-            <form action="connexion.php" method="POST">
-            <h1>Connexion</h1>
-            <br>
-
-            <label><b>E-mail ou nom d'utilisateur</b></label>
-            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
-
-            <label><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entrer le mot de passe" name="password" id="password" required>
-           
-            <input type="checkbox" id="ShowPassword" onclick="showPassword()">
-            <label for="ShowPassword">Afficher le mot de passe</label>
-            <input type="submit" id='submit' value='Connexion' >
-            <a href="inscrire.html">S'isncrire</a>
-            
-            </form>
+        <section>
             
         </section>
         <script src="script.js"></script>
