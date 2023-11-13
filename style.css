@@ -58,10 +58,10 @@
 }
 
 .menu li a {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #f7f9fb;
-    font-size: 1vw;
+    font-size: 1.12vw;
     text-decoration: none;
-    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -376,5 +376,5 @@ footer{
 .cpy{
     text-align: center;
     color: #ccc;
-    
+
 }
