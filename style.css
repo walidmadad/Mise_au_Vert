@@ -198,22 +198,28 @@
     font-weight: bold;
     margin-top: 10px;
 }
-
+.checked {
+    color: orange;
+  }
 .nos-valeurs {
     background-color: #f7f9fb;
     padding: 50px 0;
     text-align: center; 
     display: flex;
 }
-.NV-1 {
+.NV{
     display: flex;
+}
+.NV-1 { 
     margin-top: 20px;
-    text-transform: uppercase;
-    width: 26.755852842809364vw;
+    width: 22.755852842809364vw;
     margin: auto auto;
     color: #3b3a3a;
-    padding: 20px;
+    padding: 1.6377926421404682vw;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.250), 0 10px 10px rgba(0, 0, 0, 0.22); 
+}
+.nos-valeurs p{
+    font-size: 2vw;
 }
 .t-title{
     font-size: 2vw;
