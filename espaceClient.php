@@ -19,12 +19,14 @@
                     </div>
                     <div class="navbar_links">
                         <ul class="menu">
-                            <li><a class="Accueil" href="index.html">Accueil</a></li>
-                            <li><a class="Apropos" href="apropos.html">à propos</a></li>
-                            <li><a class="Service" href="service.html">Pensions</a></li>
-                            <li><a class="Tarifs" href="tarifs.html">Tarifs</a></li>
-                            <li><a class="Contact" href="contact.html">Contact</a></li>
-                            <li><a class="EspaceClient" href="espaceClient.html">Espace Client</a></li>
+                            <li><a>
+                                <?php
+                                    session_start(); 
+                                    $nom = $_SESSION['nom'];
+                                    $prenom = $_SESSION['prenom'];
+                                    echo $nom.' '.$prenom;
+                                ?>
+                            </a></li>
                         </ul>
                     </div>
                 </div>

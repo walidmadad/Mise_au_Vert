@@ -6,7 +6,7 @@ $email = $_POST['email'];
 $date_de_naissance = $_POST['date_de_naissance'];
 $password_utilisateur = $_POST['password'];
 
-$password_hasher = md5($password_utilisateur);
+$password_hasher = password_hash($password_utilisateur, PASSWORD_DEFAULT);
 
 $servername = "localhost";
 $username = "root";

@@ -49,7 +49,19 @@ function showPassword() {
 
     if (checkBox.checked) {
       passwordField.type = "text";
-    } else {
+    } 
+    else{
+      passwordField.type = "password";
+    }
+}
+function showPassword2() {
+    var passwordField = document.getElementById("password2");
+    var checkBox = document.getElementById("ShowPassword2");
+
+    if (checkBox.checked) {
+      passwordField.type = "text";
+    } 
+    else{
       passwordField.type = "password";
     }
 }
