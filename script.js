@@ -41,3 +41,15 @@ function nextTemoignage() {
 
 showTemoignage(currentIndex2);
     
+///////////////////////////////////////
+
+function showPassword() {
+    var passwordField = document.getElementById("password");
+    var checkBox = document.getElementById("ShowPassword");
+
+    if (checkBox.checked) {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+}
