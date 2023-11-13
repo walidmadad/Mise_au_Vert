@@ -1,9 +1,32 @@
+
 <?php
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
-$email = $_POST['eamil'];
+$email = $_POST['email'];
 $date_de_naissance = $_POST['date_de_naissance'];
-$password = $_POST['password'];
+$password_utilisateur = $_POST['password'];
 
+$password_hasher = md5($password_utilisateur);
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "la_mise_au_vert";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("La connexion a échoué : " . $conn->connect_error);
+}
+$stmt = $conn->prepare("INSERT INTO information_account_client (nom_client, prenom_client, email_client, date_naissance_client, password_client) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $nom, $prenom, $email, $date_de_naissance, $password_hasher);
+
+if ($stmt->execute()) {
+    echo "";
+} else {
+    echo "Erreur lors de l'enregistrement : " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
 ?>
