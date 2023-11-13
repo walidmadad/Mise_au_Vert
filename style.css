@@ -50,7 +50,7 @@
 
 .menu li {
     float: left;
-    width: 26.5vw;
+    width: 9.5vw;
     height: 1vw;
     line-height: 6.2vw;
     text-align: center;
@@ -58,9 +58,9 @@
 }
 
 .menu li a {
-    font-family:arial;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #f7f9fb;
-    font-size: 1.62vw;
+    font-size: 1.12vw;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
