@@ -416,3 +416,42 @@ footer{
     margin-left: 220px;
 }
 
+.container_espaceClient2{
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.events,
+.customer-support {
+    width: 48%; 
+}
+
+.side-by-side h2 {
+    color: #333;
+}
+
+.side-by-side p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.side-by-side a {
+    display: block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.side-by-side a:hover {
+    text-decoration: underline;
+}
+
