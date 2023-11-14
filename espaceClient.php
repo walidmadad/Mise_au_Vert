@@ -8,12 +8,9 @@
         <link rel="icon" type="image/x-icon" href="res/logo.png">
     </head>
     <body>
-        <header id="header">
+        <section id="menuEspaceClient">
             <div class="navbar_espaceClient">
-                <div class="container_espaceClient">
-                    
-                        
-                    
+                <div class="container_espaceClient"> 
                     <div class="navbar_links_espaceClient">
                         <ul class="menu_espaceClient">
                         <li><img src="res/person-profile-icon.png" alt="logo" id="logo"><li>
@@ -25,17 +22,20 @@
                                     echo $nom.' '.$prenom;
                                 ?>
                             </a></li>
-                            <br>
-                            <li><a href="informations_client.php">Profile</a></li>
-                            <li><a href="liste_animaux.php">Liste des animaux</a></li>
-                            <li><a href="#"></a></li>
+                            <br><br><br>
+                            <li><a href="informations_client.php">Profile</a></li><br><br>
+                            <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
+                            <li><a href="">Historique</a></li><br><br>
+                            <li><a href="">Réservation</a></li><br><br>
+                            <li><a href="">Paramétres</a></li><br><br>
+                            <li><a href="#">Se déconecter</a></li><br>
                         </ul>
                     </div>
                 </div>
             </div>
-        </header>
-        <section>
-            
+        </section>
+        <section class="espaceClient-1">
+            <h1>Espace Client</h1><hr>
         </section>
         <script src="script.js"></script>
     </body>

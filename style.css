@@ -408,4 +408,11 @@ footer{
     color: #333;
     font-size: 18px;
 }
+.espaceClient-1 h1{  
+    text-align: center;
+    padding-top: 3vh;
+}
+.espaceClient-1{
+    margin-left: 220px;
+}
 
