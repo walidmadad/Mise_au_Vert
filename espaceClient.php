@@ -9,16 +9,14 @@
     </head>
     <body>
         <header id="header">
-            <div class="navbar">
-                <div class="container">
-                    <div>
-                        <a href="index"><img src="res/logo.png" alt="logo" id="logo"></a>
-                    </div>
-                    <div>
-                        <a class="titre" href="index.html">La Mise Au Vert</a>
-                    </div>
-                    <div class="navbar_links">
-                        <ul class="menu">
+            <div class="navbar_espaceClient">
+                <div class="container_espaceClient">
+                    
+                        
+                    
+                    <div class="navbar_links_espaceClient">
+                        <ul class="menu_espaceClient">
+                        <li><img src="res/person-profile-icon.png" alt="logo" id="logo"><li>
                             <li><a>
                                 <?php
                                     session_start(); 
@@ -27,6 +25,10 @@
                                     echo $nom.' '.$prenom;
                                 ?>
                             </a></li>
+                            <br>
+                            <li><a href="informations_client.php">Profile</a></li>
+                            <li><a href="liste_animaux.php">Liste des animaux</a></li>
+                            <li><a href="#"></a></li>
                         </ul>
                     </div>
                 </div>

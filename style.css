@@ -378,3 +378,34 @@ footer{
     color: #ccc;
 
 }
+
+.navbar_espaceClient {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.container_espaceClient {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_espaceClient {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu_espaceClient li {
+    padding: 8px;
+    text-align: center;
+}
+
+.menu_espaceClient a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
