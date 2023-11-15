@@ -23,8 +23,8 @@
                                 ?>
                             </a></li>
                             <br><br>
-                            <li><a href="espaceClient.php" style="color:#209d1e">Accueil</a><li><br>
-                            <li><a href="informations_client.php">Profile</a></li><br><br>
+                            <li><a href="espaceClient.php">Accueil</a><li><br>
+                            <li><a href="informations_client.php" style="color:#209d1e">Profile</a></li><br><br>
                             <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
                             <li><a href="historique.php">Historique</a></li><br><br>
                             <li><a href="reservation.php">Réservation</a></li><br><br>
@@ -37,32 +37,8 @@
             </div>
         </section>
         <section class="espaceClient-1">
-            <h1>Espace Client</h1><hr>
-            <div class="container_espaceClient2">
-                <div class="side-by-side">
-                    <div class="events">
-                       <h2>Événements à Venir</h2>
-                        <p>Découvrez nos prochains événements spéciaux et journées portes ouvertes. Rejoignez-nous pour des moments mémorables avec nos pensionnaires.</p>
-                        <a href="#upcoming-events">En savoir plus sur nos événements</a>
-                   </div>
-
-                    <div class="customer-support">
-                        <h2>Soutien Client</h2>
-                        <p>Notre équipe de support client est là pour répondre à vos questions et vous aider dans le processus de réservation. Contactez-nous à tout moment pour une assistance rapide.</p>
-                        <a href="#contact-support">Contacter le support client</a>
-                    </div>
-                    <div class="side-by-side">
-                </div>
-            </div>
-            <div class="container_espaceClient2">
-                <div class="side-by-side">
-                    <div class="partnerships">
-                        <h2>Partenaires ou Collaborations</h2>
-                        <p>Découvrez nos partenaires et collaborations qui contribuent à offrir les meilleurs services possibles à nos clients et leurs animaux de compagnie.</p>
-                        <a href="#partnerships">En savoir plus sur nos partenaires</a>
-                    </div>
-                </div>
-            </div>
+            <h1>Gestion de profile</h1><hr>
+            
         </section>
         <script src="script.js"></script>
     </body>
