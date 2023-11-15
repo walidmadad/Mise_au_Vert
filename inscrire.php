@@ -1,5 +1,6 @@
 
 <?php
+include("connect.php");
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $email = $_POST['email'];
@@ -8,12 +9,8 @@ $password_utilisateur = $_POST['password'];
 
 $password_hasher = password_hash($password_utilisateur, PASSWORD_DEFAULT);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "la_mise_au_vert";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$cnx = new Connect();
+$conn = $cnx->connexion();
 
 if ($conn->connect_error) {
     die("La connexion a échoué : " . $conn->connect_error);
