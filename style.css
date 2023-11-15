@@ -454,4 +454,12 @@ footer{
 .side-by-side a:hover {
     text-decoration: underline;
 }
-
+.tarif-1 h1{
+    text-align: center; 
+     padding-top: 8vw;
+ }
+ .tarif-1-1{
+ 
+     text-align:center;
+     margin: 2vw 10vw;
+ }
