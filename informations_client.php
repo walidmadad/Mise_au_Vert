@@ -38,7 +38,7 @@
         </section>
         <section class="espaceClient-1">
             <h1>Gestion de profile</h1><hr>
-            
+            <a>Nom: </a><a><?php $nom = $_SESSION['nom']; echo $nom;?></a>
         </section>
         <script src="script.js"></script>
     </body>
