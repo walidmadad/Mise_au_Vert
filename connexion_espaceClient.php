@@ -1,5 +1,5 @@
 <?php
-include("connect.php");
+include("Controller/connect.php");
 
 $email = $_POST['username'];
 $password = $_POST['password'];

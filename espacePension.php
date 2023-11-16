@@ -24,7 +24,7 @@
                             </a></li>
                             <br><br>
                             <li><a href="espaceClient.php" style="color:#209d1e">Accueil</a><li><br>
-                            <li><a href="informations_client.php">Pension</a></li><br><br>
+                            <li><a href="informations_pension.php">Pension</a></li><br><br>
                             <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
                             <li><a href="historique.php">Historique</a></li><br><br>
                             <li><a href="reservation.php">Réservation</a></li><br><br>
