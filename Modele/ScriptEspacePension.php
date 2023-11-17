@@ -1,4 +1,5 @@
 <?php 
+include("Controlleur/connect.php");
 class ScriptEspacePension{
     private $nom_pension;
     private $nom_responsable;
@@ -36,7 +37,36 @@ class ScriptEspacePension{
         $conn->close();
     }
 
-    public function connexionPension(){
+    public function connexionPension($email, $password){
+        $this->email = $email;
+        $this->password = $password;
+
+        $cnx = new Connect();
+        $conn = $cnx->connexion();
+
+        if($conn->connect_error) {
+            die("La connexio à échoué : ". $conn->connect_error);
+        }
+
+        $stmt = $conn->prepare("SELECT * FROM pension WHERE email = '?' ");
+        $stmt->bind_param("s", $email);
+
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $hashed_password_from_db = $row['password'];
+        
+            if (password_verify($password, $hashed_password_from_db)) {
+
+                header('location: ../espacePension.php');
+            } else {
+                echo "Identifiants incorrects";
+            }
+        } else {
+            echo "Identifiants incorrects";
+        }
+
     }
 
 }

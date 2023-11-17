@@ -1,5 +1,5 @@
 <?php 
-include("connect.php");
+include("Modele/ScriptEspacePension.php");
 
 $nom_pension = $_POST["nom_pension"];
 $nom_responsable = $_POST["nom_responsable"];
