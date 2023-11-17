@@ -1,5 +1,6 @@
 <?php 
-include("Controlleur/connect.php");
+include("../Controller/connect.php");
+
 class ScriptEspacePension{
     private $nom_pension;
     private $nom_responsable;
@@ -28,7 +29,7 @@ class ScriptEspacePension{
         $stmt->bind_param("ssssss", $nom_pension, $nom_responsable, $email, $telephone_pension, $adresse_pension,$ville_pension, $password);
     
         if($stmt->execute()) {  
-            header("location: EspacePension.html");
+            header("location: ../EspacePension.html");
         } else {
             echo "Erreur Lors de l'enregistrement : ".$stmt->error;
         }
@@ -48,7 +49,7 @@ class ScriptEspacePension{
             die("La connexio à échoué : ". $conn->connect_error);
         }
 
-        $stmt = $conn->prepare("SELECT * FROM pension WHERE email = '?' ");
+        $stmt = $conn->prepare("SELECT * FROM pension WHERE email = ?");
         $stmt->bind_param("s", $email);
 
         $stmt->execute();
@@ -58,7 +59,13 @@ class ScriptEspacePension{
             $hashed_password_from_db = $row['password'];
         
             if (password_verify($password, $hashed_password_from_db)) {
-
+                $this->nom_pension = $row['nom_pension'];
+                $this->nom_responsable = $row['responsable_pension'];
+                $this->adresse_pension = $row['adresse_pension'];
+                $this->ville_pension = $row['ville_pension'];
+                $this->email_entrust = $row['email'];
+                $this->telephone_pension = $row['telephne_pension'];
+                
                 header('location: ../espacePension.php');
             } else {
                 echo "Identifiants incorrects";

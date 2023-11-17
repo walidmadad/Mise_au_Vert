@@ -3,23 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Mise Au Vert</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" type="image/x-icon" href="res/logo.png">
+        <link rel="icon" type="image/x-icon" href="../res/logo.png">
     </head>
     <body>
         <header id="header">
             <div class="navbar">
                 <div class="container">
                     <div>
-                        <a href="index"><img src="res/logo.png" alt="logo" id="logo"></a>
+                        <a href="../index"><img src="../res/logo.png" alt="logo" id="logo"></a>
                     </div>
                     <div>
-                        <a class="titre" href="index.html">La Mise Au Vert</a>
+                        <a class="titre" href="../index.html">La Mise Au Vert</a>
                     </div>
                     <div class="navbar_links">
                         <ul class="menu">
-                            <li><a class="Accueil" href="index.html">Accueil</a></li>
+                            <li><a class="Accueil" href="../index.html">Accueil</a></li>
                             <li><a class="Apropos" href="apropos.html">à propos</a></li>
                             <li><a class="Service" href="EspacePension.html">Pensions</a></li>
                             <li><a class="EspaceClient" href="espaceClient.html">Espace Client</a></li>
@@ -30,7 +30,7 @@
             </div>
         </header>
         <section id="container-connexion">
-            <form action="connexion_pension.php" method="POST">
+            <form action="../Controller/connexion_pension.php" method="POST">
             <h1>Connexion au Pension</h1>
             <br>
             <label><b>Nom de pension</b></label>
@@ -42,9 +42,9 @@
             <input type="checkbox" id="ShowPassword" onclick="showPassword()">
             <label for="ShowPassword">Afficher le mot de passe</label>
             <input type="submit" id='submit' value='Connexion' >
-            <a href="Create_pension.html">Créer une pension</a>
+            <a href="../View/Create_pension.html">Créer une pension</a>
             </form>   
         </section>
-        <script src="script.js"></script>
+        <script src="../script.js"></script>
     </body>
 </html>
