@@ -1,5 +1,5 @@
 <?php 
 session_start();
-header('location: espaceClient.html');
+header('location: ../espaceClient.html');
 
 ?>

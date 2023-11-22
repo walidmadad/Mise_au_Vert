@@ -29,7 +29,7 @@ class ScriptEspaceClient{
         $sqlStmt->bind_param("sssss",$nom_client, $prenom_client, $email_client, $password_client, $date_naissance_client);
 
         if($sqlStmt->execute()) {  
-            header("location: ../EspacePension.html");
+            header("location: ../View/espaceClient.html");
         } else {
             echo "Erreur Lors de l'enregistrement : ".$sqlStmt->error;
         }

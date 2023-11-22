@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Mise Au Vert</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" type="image/x-icon" href="res/logo.png">
+        <link rel="icon" type="image/x-icon" href="../res/logo.png">
     </head>
     <body>
         <section id="menuEspaceClient">
@@ -13,14 +13,15 @@
                 <div class="container_espaceClient"> 
                     <div class="navbar_links_espaceClient">
                         <ul class="menu_espaceClient">
-                        <li><img src="res/person-profile-icon.png" alt="logo" id="logo"><li>
+                        <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                             <li><a>
-                                <?php
-                                    session_start(); 
-                                    $nom = $_SESSION['nom'];
-                                    $prenom = $_SESSION['prenom'];
-                                    echo $nom.' '.$prenom;
-                                ?>
+                                    <?php
+
+                                    session_start();
+                                    include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+                                    $scriptEspaceClient = new ScriptEspaceClient();
+                                    echo $scriptEspaceClient->getNom();
+                                    ?>
                             </a></li>
                             <br><br>
                             <li><a href="espaceClient.php">Accueil</a><li><br>
@@ -38,7 +39,18 @@
         </section>
         <section class="espaceClient-1">
             <h1>Gestion de profile</h1><hr>
-            <a>Nom: </a><a><?php $nom = $_SESSION['nom']; echo $nom;?></a>
+            <a>Nom: </a><input type"text" id="gestion-profile_nom" name="nom" value="<?php
+
+            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+            $scriptEspaceClient = new ScriptEspaceClient();
+            echo $scriptEspaceClient->getNom();
+            ?>"> <br>
+            <a>Prenom: </a><input type"text" id="gestion-profile_nom" name="nom" value="<?php
+
+            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+            $scriptEspaceClient = new ScriptEspaceClient();
+            echo $scriptEspaceClient->getPrenom();
+            ?>">
         </section>
         <script src="script.js"></script>
     </body>
