@@ -7,4 +7,5 @@ $password = $_POST['password'];
 $connexion = new ScriptEspaceClient();
 $connexion->ConnexionClient($email, $password);
 
+exit();
 ?>

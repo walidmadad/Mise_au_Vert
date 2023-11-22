@@ -1,7 +1,10 @@
 <?php
-include("../Controller/connect.php");
+include(realpath(__DIR__ . '/../Controller/connect.php'));
+
 
 class ScriptEspaceClient{
+
+
     private $nom_client;
     private $prenom_client;
     private $email_client;
@@ -56,17 +59,34 @@ class ScriptEspaceClient{
             $row = $result->fetch_assoc();
             $hashed_password_from_db = $row['password_client'];
 
+
             if (password_verify($password_client, $hashed_password_from_db)) {
+                session_start();
+                $_SESSION['nom_client'] = $row['nom_client'];
+                $_SESSION['prenom_client'] = $row['prenom_client'];
+                $_SESSION['email_client'] = $row['email_client'];
+                $_SESSION['date_naissance_client'] = $row['date_naissance_client'];
+
                 header('location: ../View/EspaceClient/espaceClient.php');
+
             } else {
                 echo "Identifiants incorrects";
             }
         } else {
             echo "Identifiants incorrects";
         }
-
         $stmt->close();
+    }
 
+    public function getNom(){
+        $nom = isset($_SESSION['nom_client']) ? $_SESSION['nom_client'] : null;
+        return $nom;
+    }
+    public function getPrenom(){
+        return isset($_SESSION['prenom_client']) ? $_SESSION['prenom_client'] : null;
+    }
+    public function getEmail(){
+        return isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
     }
 
 }
