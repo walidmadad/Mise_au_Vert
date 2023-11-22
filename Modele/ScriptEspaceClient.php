@@ -88,5 +88,8 @@ class ScriptEspaceClient{
     public function getEmail(){
         return isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
     }
+    public function getDateNaiss(){
+        return isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+    }
 
 }
