@@ -6,6 +6,31 @@
         <link rel="stylesheet" href="../../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/x-icon" href="../res/logo.png">
+        <style>
+            .espaceClient-1 {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+            h1 {
+                color: #333;
+            }
+            a {
+                display: block;
+                margin-bottom: 5px;
+            }
+            input, select {
+                margin-bottom: 10px;
+                padding: 8px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            label {
+                display: inline-block;
+                margin-bottom: 5px;
+            }</style>
     </head>
     <body>
         <section id="menuEspaceClient">
@@ -108,7 +133,7 @@
             $scriptEspaceClient = new ScriptEspaceClient();
             echo $scriptEspaceClient->getEmail();
             ?>"
+            <input type="submit" id="Modfier">Modifier</input>
         </section>
-        <script src="script.js"></script>
     </body>
 </html>

@@ -224,8 +224,6 @@
 .t-title{
     font-size: 2vw;
 }
-
-
 .nos-valeurs ul {
     list-style-type: none;
     padding: 0;
@@ -234,29 +232,25 @@
 .nos-valeurs li {
     margin-top: 15px;
 }
-
-
-
-
 #container-connexion{
     width:400px;
     margin:0 auto;
     padding-top:15%;
    }
 
-   form {
+#container-connexion form {
     width:100%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    }
-   #container-connexion h1{
+#container-connexion h1{
     text-align: center;
     margin: 0 auto;
     padding-bottom: 10px;
    }
-   #container-connexion label{
+#container-connexion label{
     padding-bottom: 10px;
    }
 
@@ -268,7 +262,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
    }
-   
+
 
 input[type=submit] {
     background-color: #53af57;
@@ -459,7 +453,7 @@ footer{
      padding-top: 8vw;
  }
  .tarif-1-1{
- 
+
      text-align:center;
      margin: 2vw 10vw;
  }
