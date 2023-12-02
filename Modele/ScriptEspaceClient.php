@@ -83,13 +83,16 @@ class ScriptEspaceClient{
         return $nom;
     }
     public function getPrenom(){
-        return isset($_SESSION['prenom_client']) ? $_SESSION['prenom_client'] : null;
+        $prenom = isset($_SESSION['prenom_client']) ? $_SESSION['prenom_client'] : null;
+        return $prenom;
     }
     public function getEmail(){
-        return isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+        $email = isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+        return $email;
     }
     public function getDateNaiss(){
-        return isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+        $DateDeNaissance = isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+        return $DateDeNaissance;
     }
 
 }
