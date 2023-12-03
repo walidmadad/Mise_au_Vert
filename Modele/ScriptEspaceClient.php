@@ -94,5 +94,14 @@ class ScriptEspaceClient{
         $DateDeNaissance = isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
         return $DateDeNaissance;
     }
+    public function getYear(){
+
+    }
+    public function getMonth(){
+
+    }
+    public function getDay(){
+
+    }
 
 }
