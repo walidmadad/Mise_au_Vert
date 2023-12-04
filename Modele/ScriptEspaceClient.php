@@ -91,17 +91,31 @@ class ScriptEspaceClient{
         return $email;
     }
     public function getDateNaiss(){
-        $DateDeNaissance = isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
+        $DateDeNaissance = isset($_SESSION['date_naissance_client']) ? $_SESSION['date_naissance_client'] : null;
         return $DateDeNaissance;
     }
     public function getYear(){
+        $dateOfBirth = $this->getDateNaiss();
+        if (!empty($dateOfBirth)) {
+            $year = date('Y', strtotime($dateOfBirth));
+            return $year;
+        }
+
 
     }
     public function getMonth(){
-
+        $dateOfBirth = $this->getDateNaiss();
+        if(!empty($dateOfBirth)){
+            $month = date('M',strtotime($dateOfBirth));
+            return $month;
+        }
     }
     public function getDay(){
-
+        $dateOfBirth = $this->getDateNaiss();
+        if(!empty($dateOfBirth)){
+            $day = date('d',strtotime($dateOfBirth));
+            return $day;
+        }
     }
 
 }

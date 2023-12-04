@@ -39,15 +39,17 @@
                     <div class="navbar_links_espaceClient">
                         <ul class="menu_espaceClient">
                         <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
-                            <li><a>
+                            <li><a style='text-transform: uppercase'>
                                     <?php
 
                                     session_start();
                                     include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+                                    include_once(realpath(__DIR__ . '/../../Controller/connect.php'));
                                     $scriptEspaceClient = new ScriptEspaceClient();
-                                    echo $scriptEspaceClient->getNom();
+
+                                    echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
                                     ?>
-                            </a></li>
+                                </a></li>
                             <br><br>
                             <li><a href="espaceClient.php">Accueil</a><li><br>
                             <li><a href="informations_client.php" style="color:#209d1e">Profile</a></li><br><br>
@@ -63,7 +65,7 @@
             </div>
         </section>
         <section class="espaceClient-1">
-            <h1>Gestion de profile</h1><hr>
+            <h1>Gestion de profile</h1><hr style="margin-bottom: 30px;">
             <a>Nom: </a><input type"text" id="gestion-profile_nom" name="nom" value="<?php
             include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
             $scriptEspaceClient = new ScriptEspaceClient();
@@ -74,9 +76,13 @@
             $scriptEspaceClient = new ScriptEspaceClient();
             echo $scriptEspaceClient->getPrenom();
             ?>"> <br>
-            <a>Date de Naissance: </a>
+            <a align="center" style="margin-top: 30px">Date de Naissance</a>
             <label for="day">Jour:</label>
             <select id="day" name="day">
+                <option value=""><?php include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+                    $scriptEspaceClient = new ScriptEspaceClient();
+                    echo $scriptEspaceClient->getDay();
+                    ?></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -111,6 +117,10 @@
             </select>
             <label for="month">Mois:</label>
             <select id="month" name="month" onchange="updateDays()">
+                <option ><?php include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+                    $scriptEspaceClient = new ScriptEspaceClient();
+                    echo $scriptEspaceClient->getMonth();
+                    ?></option>
                 <option value="1">Janvier</option>
                 <option value="2">Février</option>
                 <option value="3">Mars</option>
@@ -125,15 +135,20 @@
                 <option value="12">Décembre</option>
             </select>
             <label for="year">Année:</label>
-            <input type="text1" id="year" name="year" placeholder="YYYY">
+            <input type="text1" id="year" name="year" placeholder="YYYY" value="<?php
+            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+            $scriptEspaceClient = new ScriptEspaceClient();
+            echo $scriptEspaceClient->getYear();
+            ?>">
             <br>
 
             <a>Email : </a><input type="text" id="gestion-profile" name="email" value="<?php
             include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
             $scriptEspaceClient = new ScriptEspaceClient();
             echo $scriptEspaceClient->getEmail();
-            ?>"
-            <input type="submit" id="Modfier">Modifier</input>
+            ?>">
+                <input type="submit" id='' value='Modifier'>
+            </form>
         </section>
     </body>
 </html>
