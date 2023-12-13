@@ -65,88 +65,49 @@
             </div>
         </section>
         <section class="espaceClient-1">
-            <h1>Gestion de profile</h1><hr style="margin-bottom: 30px;">
-            <a>Nom: </a><input type"text" id="gestion-profile_nom" name="nom" value="<?php
-            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-            $scriptEspaceClient = new ScriptEspaceClient();
-            echo $scriptEspaceClient->getNom();
-            ?>"> <br>
-            <a>Prenom: </a><input type"text" id="gestion-profile_nom" name="prenomnom" value="<?php
-            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-            $scriptEspaceClient = new ScriptEspaceClient();
-            echo $scriptEspaceClient->getPrenom();
-            ?>"> <br>
-            <a align="center" style="margin-top: 30px">Date de Naissance</a>
-            <label for="day">Jour:</label>
-            <select id="day" name="day">
-                <option value=""><?php include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                    $scriptEspaceClient = new ScriptEspaceClient();
-                    echo $scriptEspaceClient->getDay();
-                    ?></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-            </select>
-            <label for="month">Mois:</label>
-            <select id="month" name="month" onchange="updateDays()">
-                <option ><?php include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                    $scriptEspaceClient = new ScriptEspaceClient();
-                    echo $scriptEspaceClient->getMonth();
-                    ?></option>
-                <option value="1">Janvier</option>
-                <option value="2">Février</option>
-                <option value="3">Mars</option>
-                <option value="4">Avril</option>
-                <option value="5">Mai</option>
-                <option value="6">Juin</option>
-                <option value="7">Juillet</option>
-                <option value="8">Août</option>
-                <option value="9">Septembre</option>
-                <option value="10">Octobre</option>
-                <option value="11">Novembre</option>
-                <option value="12">Décembre</option>
-            </select>
-            <label for="year">Année:</label>
-            <input type="text1" id="year" name="year" placeholder="YYYY" value="<?php
-            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-            $scriptEspaceClient = new ScriptEspaceClient();
-            echo $scriptEspaceClient->getYear();
-            ?>">
-            <br>
+            <form method="post" action="traitement-modification-profile.php">
+                <h1>Gestion de profil</h1>
+                <hr style="margin-bottom: 30px;">
 
-            <a>Email : </a><input type="text" id="gestion-profile" name="email" value="<?php
-            include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-            $scriptEspaceClient = new ScriptEspaceClient();
-            echo $scriptEspaceClient->getEmail();
-            ?>">
+                <label for="gestion-profile_nom">Nom:</label>
+                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $scriptEspaceClient->getNom(); ?>"><br>
+
+                <label for="gestion-profile_prenom">Prénom:</label>
+                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $scriptEspaceClient->getPrenom(); ?>"><br>
+
+                <label align="center" style="margin-top: 30px">Date de Naissance</label>
+                <label for="day">Jour:</label>
+                <select id="day" name="day">
+                    <?php
+                    for ($i = 1; $i <= 31; $i++) {
+                        $selected = ($scriptEspaceClient->getDay() == $i) ? "selected" : "";
+                        echo "<option value=\"$i\" $selected>$i</option>";
+                    }
+                    ?>
+                </select>
+
+                <label for="month">Mois:</label>
+                <select id="month" name="month" onchange="updateDays()">
+                    <?php
+                    $mois = [
+                        1 => "Janvier", 2 => "Février", 3 => "Mars", 4 => "Avril",
+                        5 => "Mai", 6 => "Juin", 7 => "Juillet", 8 => "Août",
+                        9 => "Septembre", 10 => "Octobre", 11 => "Novembre", 12 => "Décembre"
+                    ];
+
+                    foreach ($mois as $numero => $nom) {
+                        $selected = ($scriptEspaceClient->getMonth() == $numero) ? "selected" : "";
+                        echo "<option value=\"$numero\" $selected>$nom</option>";
+                    }
+                    ?>
+                </select>
+
+                <label for="year">Année:</label>
+                <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $scriptEspaceClient->getYear(); ?>"><br>
+
+                <label for="gestion-profile_email">Email :</label>
+                <input type="text" id="gestion-profile_email" name="email" value="<?php echo $scriptEspaceClient->getEmail(); ?>">
+
                 <input type="submit" id='' value='Modifier'>
             </form>
         </section>

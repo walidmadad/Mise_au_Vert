@@ -43,7 +43,18 @@
             <input type="checkbox" id="ShowPassword" onclick="showPassword()">
             <label for="ShowPassword">Afficher le mot de passe</label>
             <input type="submit" id='submit' value='Connexion' >
-            <a href="inscrire.html">S'isncrire</a>
+            <a href="inscrireClient.php">S'isncrire</a>
+                <a><?php
+                    session_start();
+                    include_once(realpath(__DIR__ . '/../Modele/ScriptEspaceClient.php'));
+                    if (isset($_SESSION['erreur'])) {
+                        $erreur = $_SESSION['erreur'];
+                        echo "<p style='color:red'>$erreur</p>";
+                        unset($_SESSION['erreur']); // Supprimer la variable d'erreur après l'avoir affichée
+                    }
+                    ?>
+
+                </a>
             
             </form>
             

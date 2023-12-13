@@ -5,4 +5,4 @@ $password = $_POST['password'];
 
 $connexion = new ScriptEspacePension();
 $connexion->connexionPension($pension_email, $password);
-?>
+

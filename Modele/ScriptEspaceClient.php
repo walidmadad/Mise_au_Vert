@@ -29,7 +29,7 @@ class ScriptEspaceClient{
         $sqlStmt->bind_param("sssss",$nom_client, $prenom_client, $email_client, $password_client, $date_naissance_client);
 
         if($sqlStmt->execute()) {  
-            header("location: ../View/espaceClient.html");
+            header("location: ../View/espaceClient.php");
         } else {
             echo "Erreur Lors de l'enregistrement : ".$sqlStmt->error;
         }
@@ -70,10 +70,14 @@ class ScriptEspaceClient{
                 header('location: ../View/EspaceClient/espaceClient.php');
 
             } else {
-                echo "Identifiants incorrects";
+                session_start();
+                $_SESSION['erreur'] = "E-mail ou mot de passe incorrect";
+                header('location: ../View/espaceClient.php');
             }
         } else {
-            echo "Identifiants incorrects";
+            session_start();
+            $_SESSION['erreur'] = "E-mail ou mot de passe incorrect";
+            header('location: ../View/espaceClient.php');
         }
         $stmt->close();
     }

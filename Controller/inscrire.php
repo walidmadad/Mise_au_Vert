@@ -14,4 +14,4 @@ $password_hasher = password_hash($password_utilisateur, PASSWORD_DEFAULT);
 
 $Create = new ScriptEspaceClient();
 $Create->CreateClient($nom, $prenom, $email, $password_hasher, $date_de_naissance);
-?>
+

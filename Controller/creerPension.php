@@ -13,4 +13,3 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 $compte = new ScriptEspacePension();
 $compte->createAccount($nom_pension, $nom_responsable, $ville, $adresse, $Telephone, $email, $password);
-?>

@@ -8,4 +8,4 @@ $connexion = new ScriptEspaceClient();
 $connexion->ConnexionClient($email, $password);
 
 exit();
-?>
+
