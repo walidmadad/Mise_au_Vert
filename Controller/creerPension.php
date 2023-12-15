@@ -1,13 +1,13 @@
 <?php 
 include("../Modele/ScriptEspacePension.php");
 
-$nom_pension = $_POST["nom_pension"];
-$nom_responsable = $_POST["nom_responsable"];
-$ville = $_POST["ville"];
-$adresse = $_POST["Adresse"];
-$Telephone = $_POST["Telephone"];
-$email = $_POST["email"];
-$password= $_POST["password"];
+$nom_pension = htmlspecialchars($_POST["nom_pension"]);
+$nom_responsable = htmlspecialchars($_POST["nom_responsable"]);
+$ville = htmlspecialchars($_POST["ville"]);
+$adresse = htmlspecialchars($_POST["Adresse"]);
+$Telephone = htmlspecialchars($_POST["Telephone"]);
+$email = htmlspecialchars($_POST["email"]);
+$password= htmlspecialchars($_POST["password"]);
 
 $password = password_hash($password, PASSWORD_DEFAULT);
 
