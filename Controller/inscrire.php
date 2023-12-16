@@ -1,14 +1,14 @@
 
 <?php
 include("../Modele/ScriptEspaceClient.php");
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$email = $_POST['email'];
-$day = $_POST['day'];
-$month = $_POST['month'];
-$year = $_POST['year'];
+$nom = htmlspecialchars($_POST['nom']);
+$prenom = htmlspecialchars($_POST['prenom']);
+$email = htmlspecialchars($_POST['email']);
+$day = htmlspecialchars($_POST['day']);
+$month = htmlspecialchars($_POST['month']);
+$year = htmlspecialchars($_POST['year']);
 $date_de_naissance = $year.'-'.$month.'-'.$day;
-$password_utilisateur = $_POST['password'];
+$password_utilisateur = htmlspecialchars($_POST['password']);
 
 $password_hasher = password_hash($password_utilisateur, PASSWORD_DEFAULT);
 
