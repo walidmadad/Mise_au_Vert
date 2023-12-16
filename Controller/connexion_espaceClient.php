@@ -1,8 +1,8 @@
 <?php
 include("../Modele/ScriptEspaceClient.php");
 
-$email = $_POST['username'];
-$password = $_POST['password'];
+$email = htmlspecialchars($_POST['username']);
+$password = htmlspecialchars($_POST['password']);
 
 $connexion = new ScriptEspaceClient();
 $connexion->ConnexionClient($email, $password);
