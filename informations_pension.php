@@ -27,7 +27,7 @@
                             <li><a href="informations_pension.php" style="color:#209d1e">Profile</a></li><br><br>
                             <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
                             <li><a href="historique.php">Historique</a></li><br><br>
-                            <li><a href="View/EspaceClient/reservation.php">Réservation</a></li><br><br>
+                            <li><a href="View/EspaceClient/AjouterUnProprietaire.php">Réservation</a></li><br><br>
                             <li><a href="View/EspaceClient/parametres.php">Paramétres</a></li><br><br>
                             <li><a href="View/EspaceClient/securite.php">Sécurité et Confidentialité</a></li><br><br>
                             <li><a href="deconecter.php">Se déconecter</a></li>

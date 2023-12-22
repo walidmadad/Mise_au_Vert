@@ -5,7 +5,7 @@
         <title>Mise Au Vert</title>
         <link rel="stylesheet" href="../../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" type="image/x-icon" href="../res/logo.png">
+        <link rel="icon" type="image/x-icon" href="../../res/logo.png">
         <style>
             .espaceClient-1 {
                 max-width: 600px;
@@ -49,12 +49,12 @@
 
                                     echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
                                     ?>
-                                </a></li>
+                            </a></li>
                             <br><br>
                             <li><a href="espaceClient.php">Accueil</a><li><br>
-                            <li><a href="informations_client.php" style="color:#209d1e">Profile</a></li><br><br>
+                            <li><a href="informations_client.php" >Profile</a></li><br><br>
                             <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
-                            <li><a href="AjouterUnProprietaire.php">Ajouter un Proprietaire</a></li><br><br>
+                            <li><a href="AjouterUnProprietaire.php" style="color:#209d1e">Ajouter un Proprietaire</a></li><br><br>
                             <li><a href="AjouterUnAnimal.php">Ajouter un Animal</a></li><br><br>
                             <li><a href="parametres.php">Paramétres</a></li><br><br>
                             <li><a href="securite.php">Sécurité et Confidentialité</a></li><br><br>
@@ -65,51 +65,28 @@
             </div>
         </section>
         <section class="espaceClient-1">
-            <form method="post" action="traitement-modification-profile.php">
-                <h1>Gestion de profil</h1>
-                <hr style="margin-bottom: 30px;">
 
-                <label for="gestion-profile_nom">Nom:</label>
-                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $scriptEspaceClient->getNom(); ?>"><br>
+                <h1>Ajouter un Proprietaire</h1><hr>
+                <form action="../Controller/creerPension.php" method="POST">
 
-                <label for="gestion-profile_prenom">Prénom:</label>
-                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $scriptEspaceClient->getPrenom(); ?>"><br>
+                    <label><b>Nom</b></label>
+                    <input type="text" placeholder="Entrez le nom de proprietaire" name="nom" required><br><br>
 
-                <label align="center" style="margin-top: 30px">Date de Naissance</label>
-                <label for="day">Jour:</label>
-                <select id="day" name="day">
-                    <?php
-                    for ($i = 1; $i <= 31; $i++) {
-                        $selected = ($scriptEspaceClient->getDay() == $i) ? "selected" : "";
-                        echo "<option value=\"$i\" $selected>$i</option>";
-                    }
-                    ?>
-                </select>
+                    <label><b>Prènom</b></label>
+                    <input type="text" placeholder="Entrez le prénom de proprietaire" name="prenom" required><br><br>
 
-                <label for="month">Mois:</label>
-                <select id="month" name="month" onchange="updateDays()">
-                    <?php
-                    $mois = [
-                        1 => "Janvier", 2 => "Février", 3 => "Mars", 4 => "Avril",
-                        5 => "Mai", 6 => "Juin", 7 => "Juillet", 8 => "Août",
-                        9 => "Septembre", 10 => "Octobre", 11 => "Novembre", 12 => "Décembre"
-                    ];
+                    <label><b>Adresse</b></label>
+                    <input type="text" placeholder="Entrez l'adresse de proprietaire" name="adresse" required><br><br>
 
-                    foreach ($mois as $numero => $nom) {
-                        $selected = ($scriptEspaceClient->getMonth() == $numero) ? "selected" : "";
-                        echo "<option value=\"$numero\" $selected>$nom</option>";
-                    }
-                    ?>
-                </select>
+                    <label><b>N° Telephone</b></label>
+                    <input type="text" placeholder="Entrez le numero de télephone de proprietaire" name="Telephone" required><br><br>
 
-                <label for="year">Année:</label>
-                <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $scriptEspaceClient->getYear(); ?>"><br>
 
-                <label for="gestion-profile_email">Email :</label>
-                <input type="text" id="gestion-profile_email" name="email" value="<?php echo $scriptEspaceClient->getEmail(); ?>">
+                    <input type="submit" id='submit' value='Ajouter'>
 
-                <input type="submit" id='' value='Modifier'>
-            </form>
+                </form>
+
         </section>
+        <script src="../../script.js"></script>
     </body>
 </html>
