@@ -87,7 +87,7 @@
                 </select>
 
                 <label for="month">Mois:</label>
-                <select id="month" name="month" onchange="updateDays()">
+                <select id="month" name="month">
                     <?php
                     $mois = [
                         1 => "Janvier", 2 => "Février", 3 => "Mars", 4 => "Avril",

@@ -71,19 +71,11 @@
         <label><b>Nom</b></label>
         <input type="text" placeholder="Entrez nom " name="nom" required><br><br>
 
-        <label><b>Prènom</b></label>
-        <input type="text" placeholder="Entrez votre prenom " name="prenom" required><br><br>
-
         <label><b>Pension</b></label>
         <input type="text" placeholder="Entrez la pension" name="pension" required><br><br>
 
-
-        <label><b>Adresse</b></label>
-        <input type="text" placeholder="Entrez votre adresse" name="adresse" required><br><br>
-
-        <label><b>N° Telephone</b></label>
-        <input type="text" placeholder="Entrez le numero de télephone" name="Telephone" required><br><br>
-
+        <label><b>Nom de Proprietaire</b></label>
+        <select id="proprietaire" name="proprietaire">
 
         <input type="submit" id='submit' value='Ajouter'>
 
