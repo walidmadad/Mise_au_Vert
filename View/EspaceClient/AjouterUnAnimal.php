@@ -44,7 +44,7 @@
 
                             session_start();
                             include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                            include_once(realpath(__DIR__ . '/../../Controller/connect.php'));
+                            include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
                             $scriptEspaceClient = new ScriptEspaceClient();
 
                             echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
@@ -66,16 +66,28 @@
 </section>
 <section class="espaceClient-1">
     <h1>Ajouter un Animal</h1><hr>
-    <form action="../Controller/creerPension.php" method="POST">
+    <form action="../../Controller/AjouterAnimal.php" method="POST">
 
         <label><b>Nom</b></label>
-        <input type="text" placeholder="Entrez nom " name="nom" required><br><br>
+        <input type="text" placeholder="Entrez le nom d'animal" name="nom" required><br><br>
 
-        <label><b>Pension</b></label>
-        <input type="text" placeholder="Entrez la pension" name="pension" required><br><br>
+        <label><b>Poids en kg</b></label>
+        <input type="number" placeholder="Exemple: 5,8">
+
+        <label><b>Espece</b></label>
+
+        <input type="text" >
 
         <label><b>Nom de Proprietaire</b></label>
         <select id="proprietaire" name="proprietaire">
+            <option>Veuillez choisir le proprieter</option>
+        <?php
+            include_once(realpath(__DIR__ . '/../../Modele/ScriptProprietaire.php'));
+            $prop = new ScriptProprietaire();
+            echo $prop->affihcerProprietaire();
+        ?>
+        </select>
+
 
         <input type="submit" id='submit' value='Ajouter'>
 

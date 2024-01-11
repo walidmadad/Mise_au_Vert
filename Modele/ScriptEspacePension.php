@@ -1,5 +1,5 @@
 <?php 
-include("../Controller/connect.php");
+include("../Controller/Connect.php");
 
 class ScriptEspacePension{
     private $nom_pension;

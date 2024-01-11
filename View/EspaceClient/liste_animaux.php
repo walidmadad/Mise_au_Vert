@@ -19,7 +19,7 @@
 
                                     session_start();
                                     include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                                    include_once(realpath(__DIR__ . '/../../Controller/connect.php'));
+                                    include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
                                     $scriptEspaceClient = new ScriptEspaceClient();
 
                                     echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();

@@ -44,7 +44,7 @@
 
                                     session_start();
                                     include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                                    include_once(realpath(__DIR__ . '/../../Controller/connect.php'));
+                                    include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
                                     $scriptEspaceClient = new ScriptEspaceClient();
 
                                     echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
@@ -67,7 +67,7 @@
         <section class="espaceClient-1">
 
                 <h1>Ajouter un Proprietaire</h1><hr>
-                <form action="../Controller/creerPension.php" method="POST">
+                <form action="../../Controller/AjouterProprietaire.php" method="POST">
 
                     <label><b>Nom</b></label>
                     <input type="text" placeholder="Entrez le nom de proprietaire" name="nom" required><br><br>
@@ -79,11 +79,19 @@
                     <input type="text" placeholder="Entrez l'adresse de proprietaire" name="adresse" required><br><br>
 
                     <label><b>N° Telephone</b></label>
-                    <input type="text" placeholder="Entrez le numero de télephone de proprietaire" name="Telephone" required><br><br>
+                    <input type="text" placeholder="Entrez le numero de télephone de proprietaire" name="telephone" required><br><br>
 
 
                     <input type="submit" id='submit' value='Ajouter'>
+                    <?php
 
+                        include_once (realpath(__DIR__ . "/../../Modele/ScriptProprietaire.php"));
+                        if (isset($_SESSION['ajouter'])) {
+                        $ajouter = $_SESSION['ajouter'];
+                        echo "<p style='color:green'>$ajouter</p>";
+                        unset($_SESSION['ajouter']);
+                    }
+                    ?>
                 </form>
 
         </section>

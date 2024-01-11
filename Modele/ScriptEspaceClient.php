@@ -1,5 +1,5 @@
 <?php
-include(realpath(__DIR__ . '/../Controller/connect.php'));
+include(realpath(__DIR__ . '/../Controller/Connect.php'));
 
 
 class ScriptEspaceClient{
