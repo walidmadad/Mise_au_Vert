@@ -1,11 +1,12 @@
 <?php
-include(realpath(__DIR__ . '/../Controller/Connect.php'));
+include_once(realpath(__DIR__ . '/../Controller/Connect.php'));
 
 
 class ScriptEspaceClient{
 
 
     private $nom_client;
+    private $id_client;
     private $prenom_client;
     private $email_client;
     private $password_client;
@@ -25,7 +26,7 @@ class ScriptEspaceClient{
             die("". $conn->connect_error);
         }
 
-        $sqlStmt = $conn->prepare("INSERT INTO information_account_client (nom_client, prenom_client, email_client, password_client, date_naissance_client) VALUES(?,?,?,?,?)");
+        $sqlStmt = $conn->prepare("INSERT INTO client(nom_client, prenom_client, email_client, password_client, date_naissance_client) VALUES(?,?,?,?,?)");
         $sqlStmt->bind_param("sssss",$nom_client, $prenom_client, $email_client, $password_client, $date_naissance_client);
 
         if($sqlStmt->execute()) {  
@@ -49,7 +50,7 @@ class ScriptEspaceClient{
             die("La connexion a échoué : " . $conn->connect_error);
         }
 
-        $stmt = $conn->prepare("SELECT * FROM information_account_client WHERE email_client = ?");
+        $stmt = $conn->prepare("SELECT * FROM client WHERE email_client = ?");
         $stmt->bind_param("s", $email_client);
 
         $stmt->execute();
@@ -66,6 +67,7 @@ class ScriptEspaceClient{
                 $_SESSION['prenom_client'] = $row['prenom_client'];
                 $_SESSION['email_client'] = $row['email_client'];
                 $_SESSION['date_naissance_client'] = $row['date_naissance_client'];
+                $_SESSION['id_client'] = $row['id_client'];
 
                 header('location: ../View/EspaceClient/espaceClient.php');
 
@@ -81,7 +83,10 @@ class ScriptEspaceClient{
         }
         $stmt->close();
     }
-
+    public function getId(){
+        $id = isset($_SESSION['id_client']) ? $_SESSION['id_client'] : null;
+        return $id;
+    }
     public function getNom(){
         $nom = isset($_SESSION['nom_client']) ? $_SESSION['nom_client'] : null;
         return $nom;
@@ -104,8 +109,6 @@ class ScriptEspaceClient{
             $year = date('Y', strtotime($dateOfBirth));
             return $year;
         }
-
-
     }
     public function getMonth(){
         $dateOfBirth = $this->getDateNaiss();

@@ -1,5 +1,5 @@
-<?php 
-include("../Controller/Connect.php");
+<?php
+include_once(realpath(__DIR__ . '/../Controller/Connect.php'));
 
 class ScriptEspacePension{
     private $nom_pension;

@@ -6,6 +6,20 @@
         <link rel="stylesheet" href="../../style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" type="image/x-icon" href="../res/logo.png">
+        <style>
+            .animal-table-header th {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .animal-table-data th {
+                padding: 10px;
+                background-color:#cccccc ;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <section id="menuEspaceClient">
@@ -42,6 +56,23 @@
         <section class="espaceClient-1">
             <h1>Liste des animaux</h1><hr>
             <div>
+                <table >
+                    <tr class="animal-table-header">
+                        <th>Nom</th>
+                        <th>Proprietaire</th>
+                        <th>Espece</th>
+                    </tr>
+                    <tr class="animal-table-data">
+                        <?php
+                        include_once(__DIR__ . '/../../Modele/ScriptAnimal.php');
+
+                        $ScriptAnimal = new ScriptAnimal();
+                        echo $ScriptAnimal->afficherAnimaux();
+
+                        ?>
+                    </tr>
+
+                </table>
                 <?php
 
                 ?>

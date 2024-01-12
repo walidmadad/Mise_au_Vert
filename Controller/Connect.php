@@ -1,4 +1,4 @@
-<?php 
+<?php
 class Connect{
     private $conn ;
     public function connexion(){
