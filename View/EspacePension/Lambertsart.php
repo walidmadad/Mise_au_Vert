@@ -8,8 +8,19 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" type="image/x-icon" href="../../res/logo.png">
     <style>
+        table{
+            border-collapse: collapse;
+        }
         th, td{
-            border : 2px red solid;
+            border : medium darkgreen solid;
+
+        }
+        th{
+            background-color: #53af57;
+            color: #ffffff;
+        }
+        tr:nth-child(even){
+            background-color: #c3eac4;
         }
     </style>
     <title>Pension Lambertsart</title>
@@ -28,7 +39,7 @@
                     <ul class="menu">
                         <li><a class="Accueil" href="../../index.html">Accueil</a></li>
                         <li><a class="Apropos" href="../apropos.html">à propos</a></li>
-                        <li><a class="Service" href="../EspacePension.html">Pensions</a></li>
+                        <li><a class="Service" href="../EspacePension.php">Pensions</a></li>
                         <li><a class="EspaceClient" href="../espaceClient.php">Espace Client</a></li>
                         <li><a class="Contact" href="../contact.html">Contact</a></li>
                     </ul>
@@ -37,7 +48,7 @@
         </div>
     </header>
     <main>
-        <section id="content">
+        <section class="content">
             <h2>Nos Services</h2>
             <p>Nos services incluent le bain, la promenade et le transport. Lors de l'arrivée de votre animal chez nous, son carnet de santé est vérifié...</p>
 

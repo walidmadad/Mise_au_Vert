@@ -20,32 +20,16 @@
                         <ul class="menu">
                             <li><a class="Accueil" href="../index.html">Accueil</a></li>
                             <li><a class="Apropos" href="apropos.html">à propos</a></li>
-                            <li><a class="Service" href="EspacePension.html">Pensions</a></li>
+                            <li><a class="Service" href="EspacePension.php">Pensions</a></li>
                             <li><a class="EspaceClient" href="espaceClient.php">Espace Client</a></li>
                             <li><a class="Contact" href="contact.html">Contact</a></li>
+                            <li><a class="ConnexionPension" href="EspacePension/ConnexionPension.php">Connexion</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
         <main>
-            <section id="container-connexion">
-                <form action="../Controller/connexion_pension.php" method="POST">
-                <h1>Connexion au Pension</h1>
-                <br>
-                <label for="username"><b>Nom de pension</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" id="username" required>
-
-                <label for="password"><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" id="password" required>
-
-                <input type="checkbox" id="ShowPassword" onclick="showPassword()">
-                <label for="ShowPassword">Afficher le mot de passe</label>
-                <input type="submit" id='submit' value='Connexion' >
-                <a href="../View/Create_pension.html" id="create">Créer une pension</a>
-                </form>
-            </section>
-
             <section class="pension">
                 <h1>Pension Lambertsart</h1>
                 <img src="../res/img.png">

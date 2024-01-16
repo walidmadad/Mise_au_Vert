@@ -29,7 +29,7 @@ class ScriptEspacePension{
         $stmt->bind_param("ssssss", $nom_pension, $nom_responsable, $email, $telephone_pension, $adresse_pension,$ville_pension, $password);
     
         if($stmt->execute()) {  
-            header("location: ../EspacePension.html");
+            header("location: ../EspacePension.php");
         } else {
             echo "Erreur Lors de l'enregistrement : ".$stmt->error;
         }
