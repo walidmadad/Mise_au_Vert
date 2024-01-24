@@ -77,7 +77,7 @@
 </head>
 <body>
 <div id="container-connexionPension">
-    <form action="../Controller/creerPension.php" method="POST">
+    <form action="../../Controller/creerPension.php" method="POST">
         <h1>Créer Pension</h1>
         <br>
 
