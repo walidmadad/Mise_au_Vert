@@ -80,7 +80,7 @@
 <body>
     <main>
         <section id="container-connexionPension">
-            <form action="../Controller/connexion_pension.php" method="POST">
+            <form action="../../Controller/connexion_pension.php" method="POST">
                 <h1>Connexion au Pension</h1>
                 <br>
                 <label for="username"><b>Nom de pension</b></label>
@@ -94,7 +94,7 @@
                 <input type="submit" id='submit' value='Connexion' >
                 <div style="color: blue; ">
                     <a href="CreerPension.php" id="create">Créer une pension</a><br>
-                    <a href="../EspacePension.php">Retournez à la page pension</a>
+                    <a href="EspacePension.php">Retournez à la page pension</a>
                 </div>
 
             </form>

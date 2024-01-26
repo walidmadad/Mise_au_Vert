@@ -21,7 +21,7 @@
                         <ul class="menu">
                             <li><a class="Accueil" href="../index.html">Accueil</a></li>
                             <li><a class="Apropos" href="apropos.html">à propos</a></li>
-                            <li><a class="Service" href="EspacePension.php">Pensions</a></li>
+                            <li><a class="Service" href="EspacePension/EspacePension.php">Pensions</a></li>
                             <li><a class="EspaceClient" href="espaceClient.html">Espace Client</a></li>
                             <li><a class="Contact" href="contact.html">Contact</a></li>
                         </ul>

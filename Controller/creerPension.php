@@ -9,6 +9,7 @@ $Telephone = htmlspecialchars($_POST["Telephone"]);
 $email = htmlspecialchars($_POST["email"]);
 $password= htmlspecialchars($_POST["password"]);
 
+
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 $compte = new ScriptEspacePension();
