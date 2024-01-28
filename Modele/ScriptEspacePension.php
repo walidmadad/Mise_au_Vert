@@ -26,10 +26,10 @@ class ScriptEspacePension{
         }
 
         $stmt = $conn->prepare("INSERT INTO pension (nom_pension, responsable_pension, email, telephone_pension, adresse_pension, ville_pension, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $nom_pension, $nom_responsable, $email, $telephone_pension, $adresse_pension,$ville_pension, $password);
+        $stmt->bind_param("sssssss", $nom_pension, $nom_responsable, $email, $telephone_pension, $adresse_pension,$ville_pension, $password);
     
         if($stmt->execute()) {  
-            header("location: ../EspacePension.php");
+            header("location: ../View/EspacePension/EspacePensionConnecter.php");
         } else {
             echo "Erreur Lors de l'enregistrement : ".$stmt->error;
         }
@@ -59,21 +59,26 @@ class ScriptEspacePension{
             $hashed_password_from_db = $row['password'];
         
             if (password_verify($password, $hashed_password_from_db)) {
+                session_start();
                 $this->nom_pension = $row['nom_pension'];
                 $this->nom_responsable = $row['responsable_pension'];
                 $this->adresse_pension = $row['adresse_pension'];
                 $this->ville_pension = $row['ville_pension'];
-                $this->email_entrust = $row['email'];
+                $this->email = $row['email'];
                 $this->telephone_pension = $row['telephne_pension'];
-                
-                header('location: ../espacePension.php');
+
+                header('location: ../View/EspacePension/EspacePensionConnecter.php');
             } else {
                 echo "Identifiants incorrects";
             }
         } else {
             echo "Identifiants incorrects";
         }
-
+        $stmt->close();
+    }
+    public function getNomPension(){
+        $nomPension = isset($_SESSION['nom_pension']) ? $_SESSION['nom_pension'] : null;
+        return $nomPension;
     }
 
 }
