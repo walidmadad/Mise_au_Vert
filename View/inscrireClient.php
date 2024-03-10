@@ -40,6 +40,15 @@
             <label><b>Prénom</b></label>
             <input type="text" placeholder="Entrez le prénom" name="prenom" required>
 
+                <label><b>Code Postal</b></label>
+                <input type="text" placeholder="Entrez votre Code Postal" name="CP" required>
+
+                <label><b>Ville</b></label>
+                <input type="text" placeholder="Entrez votre ville" name="ville" required>
+
+                <label><b>N° Téléphone</b></label>
+                <input type="text" placeholder="06 11 00 22 33" name="tel" required>
+
             <label><b>Email</b></label>
             <input type="text" placeholder="Entrez votre email" name="email" required>
 
