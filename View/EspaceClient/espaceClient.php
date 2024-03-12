@@ -29,7 +29,6 @@
                             <li><a href="espaceClient.php" style="color:#209d1e">Accueil</a><li><br>
                             <li><a href="informations_client.php">Profile</a></li><br><br>
                             <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
-                            <li><a href="AjouterUnProprietaire.php">Ajouter un Proprietaire</a></li><br><br>
                             <li><a href="AjouterUnAnimal.php">Ajouter un Animal</a></li><br><br>
                             <li><a href="parametres.php">Paramétres</a></li><br><br>
                             <li><a href="securite.php">Sécurité et Confidentialité</a></li><br><br>

@@ -80,5 +80,24 @@ class ScriptEspacePension{
         $nomPension = isset($_SESSION['nom_pension']) ? $_SESSION['nom_pension'] : null;
         return $nomPension;
     }
+    public function afficherPension(){
+        $cnx = new Connect();
+        $conn = $cnx->connexion();
+
+        if($conn->connect_error){
+            die("". $conn->connect_error);
+        }
+        $sqlstmt = $conn->prepare("SELECT nom_pension, id_pension FROM pension");
+        $sqlstmt->execute();
+        $result = $sqlstmt->get_result();
+        $option ="";
+
+        while($row = $result->fetch_assoc()){
+            $option .= "<option value='" . $row['id_pension'] . "'>".$row['nom_pension'] . "</option>";
+        }
+        $sqlstmt->close();
+        $conn->close();
+        return $option;
+    }
 
 }

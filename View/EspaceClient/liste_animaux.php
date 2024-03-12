@@ -43,8 +43,7 @@
                             <li><a href="espaceClient.php">Accueil</a><li><br>
                             <li><a href="informations_client.php">Profile</a></li><br><br>
                             <li><a href="liste_animaux.php" style="color:#209d1e">Liste des animaux</a></li><br><br>
-                            <li><a href="AjouterUnAnimal.php">Ajouter un Proprietaire</a></li><br><br>
-                            <li><a href="AjouterUnProprietaire.php">Ajouter un Animal</a></li><br><br>
+                            <li><a href="AjouterUnAnimal.php">Ajouter un Animal</a></li><br><br>
                             <li><a href="parametres.php">Paramétres</a></li><br><br>
                             <li><a href="securite.php">Sécurité et Confidentialité</a></li><br><br>
                             <li><a href="deconecter.php">Se déconecter</a></li>
@@ -58,9 +57,17 @@
             <div>
                 <table >
                     <tr class="animal-table-header">
-                        <th>Nom</th>
-                        <th>Proprietaire</th>
+                        <th>Nom d'Animal</th>
                         <th>Espece</th>
+                        <th>Poids</th>
+                        <th>Age</th>
+                        <th>Regle</th>
+                        <th>Carnet de Vaccination</th>
+                        <th>Vaccin a jour</th>
+                        <th>Vermifuge a jour</th>
+                        <th>Pension</th>
+                        <th>Box</th>
+                        <th>Date Fin</th>
                     </tr>
                     <tr class="animal-table-data">
                         <?php
