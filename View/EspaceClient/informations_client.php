@@ -50,14 +50,15 @@
                                     echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
                                     ?>
                                 </a></li>
-                            <br><br>
-                            <li><a href="espaceClient.php">Accueil</a><li><br>
-                            <li><a href="informations_client.php" style="color:#209d1e">Profile</a></li><br><br>
-                            <li><a href="liste_animaux.php">Liste des animaux</a></li><br><br>
-                            <li><a href="AjouterUnAnimal.php">Ajouter un Animal</a></li><br><br>
-                            <li><a href="parametres.php">Paramétres</a></li><br><br>
-                            <li><a href="securite.php">Sécurité et Confidentialité</a></li><br><br>
-                            <li><a href="deconecter.php">Se déconecter</a></li>
+
+                            <li><a href="espaceClient.php" style="margin-top:30px">Accueil</a>
+                            <li><a href="informations_client.php" style="color:#209d1e;margin-top:30px">Profile</a></li>
+                            <li><a href="liste_animaux.php" style="margin-top:30px">Liste des animaux</a></li>
+                            <li><a href="AjouterUnAnimal.php" style="margin-top:30px">Ajouter un Animal</a></li>
+                            <li><a href="SupprimerUnAnimal.php" style="margin-top:30px">Supprimer un Animal</a></li>
+                            <li><a href="parametres.php" style="margin-top:30px">Paramétres</a></li>
+                            <li><a href="securite.php" style="margin-top:30px">Sécurité et Confidentialité</a></li>
+                            <li><a href="deconecter.php" style="margin-top:30px">Se déconecter</a></li>
                         </ul>
                     </div>
                 </div>
