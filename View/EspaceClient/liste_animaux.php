@@ -81,6 +81,7 @@
                         <th>Espece</th>
                         <th>Age</th>
                         <th>Poids</th>
+
                         <th>Regle</th>
                         <th>Carnet de Vaccination</th>
                         <th>Vaccin a jour</th>
