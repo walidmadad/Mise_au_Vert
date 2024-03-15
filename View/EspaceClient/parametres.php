@@ -54,10 +54,8 @@
                             <li><a href="espaceClient.php" style="margin-top:30px">Accueil</a>
                             <li><a href="informations_client.php" style="margin-top:30px">Profile</a></li>
                             <li><a href="liste_animaux.php" style="margin-top:30px">Liste des animaux</a></li>
-                            <li><a href="AjouterUnAnimal.php" style="margin-top:30px">Ajouter un Animal</a></li>
-                            <li><a href="SupprimerUnAnimal.php" style="margin-top:30px">Supprimer un Animal</a></li>
+                            <li><a href="GestiondesAnimaux.php" style="margin-top:30px">Gestion des animaux</a></li>
                             <li><a href="parametres.php" style="color:#209d1e;margin-top:30px">Paramétres</a></li>
-                            <li><a href="securite.php" style="margin-top:30px">Sécurité et Confidentialité</a></li>
                             <li><a href="deconecter.php" style="margin-top:30px">Se déconecter</a></li>
                         </ul>
                     </div>

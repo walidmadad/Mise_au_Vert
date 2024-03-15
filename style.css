@@ -288,6 +288,20 @@ input[type=submit] {
     color: #9b1d1d;
     border: 1px solid #9b1d1d;
 }
+#update{
+    background-color: #cb6a0b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+#update:hover{
+    background-color: white;
+    color: #b0570d;
+    border: 1px solid #b0570d;
+}
 
 
 input[type=submit]:hover {
