@@ -67,7 +67,7 @@
     <form action="AjouterUnAnimal.php">
         <input type="submit" id='submit' value='Ajouter un Animal'>
     </form>
-    <form>
+    <form action="ModifierUnAnimal.php">
         <input type="submit" id="update" value="Modifier un Animal">
     </form>
     <form action="SupprimerUnAnimal.php">
