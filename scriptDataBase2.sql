@@ -213,3 +213,99 @@ ALTER TABLE `tarification`
   ADD CONSTRAINT `tarification_ibfk_2` FOREIGN KEY (`Type_Gardiennage_id`) REFERENCES `typegardiennage` (`id_TypeGardiennage`);
 COMMIT;
 
+
+INSERT INTO `pension` (`id_pension`, `ville_pension`, `adresse_pension`, `telephone_pension`, `responsable_pension`, `password`, `nom_pension`, `email`) VALUES
+(8, 'Lambertsart', '65 rue jean Jaures', '03 20 00 11 22', 'Lali Masse', '$2y$10$yTcwS2jaVQC4McgcChXCYOOEckMBOEhbDo8asETg8A22wLRsIEPcm', 'Lambertsart', 'lambertsart@miseauvert.fr'),
+(9, 'Vincennes', '03 rue Faie Felix', '01 05 01 21 22', 'Cary Bou', '$2y$10$8fZ9J75LI8TTZXYG1sL9N.9nSSi395XjtvTHWTkiJvRJXCJLbx/m6', 'Vincennes', 'vincennes@miseauvert.fr'),
+(10, 'Les Echets', '1707 ch Rosarges', '04 54 12 25 78', 'Cathy Greu', '$2y$10$.9dF5L64h239j5FGvTrM9ORjnUH/uZxWraYeKX7KbvQ/cQ2jzhEci', 'Les Echets', 'lesechets@miseauvert.fr'),
+(11, 'Saran', 'Za Des Sables De Sary 53 all Georges Charpak', '04 56 62 84 55', 'Claudia Bleu de Tasmasnie', '$2y$10$pHWy5kiOwJXt4KGW58Z5keSiTiCBriiisUXhA68XWsFYI2IXQJN02', 'Saran', 'saran@miseauvert.fr'),
+(12, 'Coulmiers', 'Les Basses Fontaines', '05 77 44 51 84', 'Filippo Potame', '$2y$10$CXrRORGedlfbNhFGIRZevuhbECklZ/V2Xb94UlXXxeF/F7OROLkze', 'Coulmiers', 'coulmiers@miseauvert.fr'),
+(13, 'Norges la ville', '7 r Sources', '07 63 22 25 74', 'Salah Mandre', '$2y$10$CR6rkOig46VTpjLefCoMke.GTy6TNWCK/PyKnTMcvvIO7FHvrQpnm', 'Norges la ville', 'norgeslaville@miseauvert.fr'),
+(14, 'Landujan', 'Le Plessix Coudray', '02 95 72 85 86', 'Odin Don', '$2y$10$c9lR953iVSradhaSKcjZWuK.yXY4yK5alcC0vh5Zc7MF4qeHOktcy', 'Landujan', 'landujan@miseauvert.fr'),
+(15, 'Ormes', 'rte de Dormans RD 980', '09 47 21 25 66', 'Lucie Ole', '$2y$10$sAWC7lxs9M66/3BBmyfAXuQGR.StXQ.L/E4svwKz0PYccpSA3Ji.O', 'Ormes', 'ormes@miseauvert.fr'),
+(16, 'Lezoux', 'rte de Ravel', '05 54 63 77 15', 'Camel Eon', '$2y$10$XSJUIAZBcMy.0xrQ6ldWLep.0CrWhc973RE4x2IIdupFz7J4CuUle', 'Lezoux', 'lezoux@miseauvert.fr'),
+(17, 'Vabres l’abbaye', '11 r Montcamp', '04 56 28 36 58', 'Bernard Val', '$2y$10$00xzVRsgp.TwRYLm06pq0uDMs9wqm3KRpcRvKSAqPmxbTMhSIygyu', 'Vabres l’abbaye', 'vabreslabbaye@miseauvert.fr'),
+(18, 'Saint Sauveur', '590 chem Saint Vaast', '03 10 12 57 38', 'Lou Treux De Mer', '$2y$10$g34wX0kV2PP0M/SeAG1JCO9q5.AoCN1zqKaYsTie1LTbbPJW1MXw2', 'Saint Sauveur', 'saintsauveur@miseauvert.fr');
+
+
+INSERT INTO `typegardiennage` (`id_TypeGardiennage`, `Libelle`) VALUES
+(1, 'Hôtel canin'),
+(2, 'Camping canin'),
+(3, 'Pension féline');
+
+
+INSERT INTO `box` (`id_box`, `superficie`, `id_TypeGardiennage`, `id_pension`) VALUES
+(5, 20, 1, 8),
+(6, 15, 2, 8),
+(7, 15, 3, 8),
+(8, NULL, 1, 9),
+(9, NULL, 2, 9),
+(10, NULL, 3, 9),
+(11, NULL, 1, 10),
+(12, NULL, 2, 10),
+(13, NULL, 3, 10),
+(14, NULL, 1, 11),
+(15, NULL, 2, 11),
+(16, NULL, 3, 11),
+(17, NULL, 1, 12),
+(18, NULL, 2, 12),
+(19, NULL, 3, 12),
+(20, NULL, 1, 13),
+(21, NULL, 2, 13),
+(22, NULL, 3, 13),
+(23, NULL, 1, 14),
+(24, NULL, 2, 14),
+(25, NULL, 3, 14),
+(26, NULL, 1, 15),
+(27, NULL, 2, 15),
+(28, NULL, 3, 15),
+(29, NULL, 1, 16),
+(30, NULL, 2, 16),
+(31, NULL, 3, 16),
+(32, NULL, 1, 17),
+(33, NULL, 2, 17),
+(34, NULL, 3, 17),
+(35, NULL, 1, 18),
+(36, NULL, 2, 18),
+(37, NULL, 3, 18);
+
+
+
+
+
+INSERT INTO `tarification` (`Pension_id`, `Type_Gardiennage_id`, `Tarif`) VALUES
+(8, 1, 18),
+(8, 2, 11),
+(8, 3, 10),
+(9, 1, NULL),
+(9, 2, NULL),
+(9, 3, NULL),
+(10, 1, NULL),
+(10, 2, NULL),
+(10, 3, NULL),
+(11, 1, NULL),
+(11, 2, NULL),
+(11, 3, NULL),
+(12, 1, NULL),
+(12, 2, NULL),
+(12, 3, NULL),
+(13, 1, NULL),
+(13, 2, NULL),
+(13, 3, NULL),
+(14, 1, NULL),
+(14, 2, NULL),
+(14, 3, NULL),
+(15, 1, NULL),
+(15, 2, NULL),
+(15, 3, NULL),
+(16, 1, NULL),
+(16, 2, NULL),
+(16, 3, NULL),
+(17, 1, NULL),
+(17, 2, NULL),
+(17, 3, NULL),
+(18, 1, NULL),
+(18, 2, NULL),
+(18, 3, NULL);
+
+
