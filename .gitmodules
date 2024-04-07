@@ -1,3 +1,6 @@
 [submodule "ApiMobileApp-MiseAuVert"]
 	path = ApiMobileApp-MiseAuVert
 	url = https://github.com/walidmadad/ApiMobileApp-MiseAuVert.git
+[submodule "MobileApp-MiseAuVert"]
+	path = MobileApp-MiseAuVert
+	url = https://github.com/walidmadad/MobileApp-MiseAuVert.git

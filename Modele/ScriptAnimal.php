@@ -37,8 +37,15 @@ class ScriptAnimal{
                 $row = $result->fetch_assoc();
                 $this->id_animal = $row['id_Animal'];
             }
-            $sqlstmt3 = $conn->prepare("INSERT INTO affectation(animal_id,Poids,Age,Regle,Carnet_Vaccination,Vaccin_a_jour,Vermifuge_a_jour,Date_fin,box_id) VALUES(?,?,?,?,?,?,?,?,?)");
-            $sqlstmt3->bind_param("sssssssss",$this->id_animal,$poids,$age,$regle,$carnet,$vaccin_a_jour,$vermifuge_a_jour,$dateFin,$id_box);
+            $dateNow = date('Y-m-d');
+            $sqlstmt4 = $conn->prepare("INSERT INTO date(Date) VALUES (?) ON DUPLICATE KEY UPDATE Date = Date");
+            $sqlstmt4->bind_param("s", $dateNow);
+            $sqlstmt4->execute();
+
+            $date_id = mysqli_insert_id($conn);
+
+            $sqlstmt3 = $conn->prepare("INSERT INTO affectation(animal_id,Poids,Age,Regle,Carnet_Vaccination,Vaccin_a_jour,Vermifuge_a_jour,Date_fin,box_id,Date_debut) VALUES(?,?,?,?,?,?,?,?,?,?)");
+            $sqlstmt3->bind_param("isssssssis",$this->id_animal,$poids,$age,$regle,$carnet,$vaccin_a_jour,$vermifuge_a_jour,$dateFin,$id_box,$dateNow);
             if($sqlstmt3->execute()){
                 session_start();
                 $_SESSION["ajouter"] = "Animal ajouté";
