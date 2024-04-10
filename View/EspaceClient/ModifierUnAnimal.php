@@ -66,11 +66,8 @@
 <section class="espaceClient-1">
     <h1>Modifier un Animal</h1><hr>
     <form method="post" action="ModifierUnAnimal2.php">
-
-
-
             <label style="margin:30px 0 19px 0"><b>Nom d'Animal que voulez supprimer</b></label>
-            <select name="animal">
+            <select name="id">
                 <option>Veuillez Choisir Un Animal</option>
                 <?php
                 include_once(realpath(__DIR__ . '/../../Modele/ScriptAnimal.php'));

@@ -64,6 +64,58 @@ class ScriptAnimal{
         }
 
     }
+
+    public function modifierAnimal($id_animal, $nom, $espece, $poids, $age, $regle, $carnet, $vaccin_a_jour, $vermifuge_a_jour, $dateFin, $id_box) {
+        $this->id_animal = $id_animal;
+        $this->nom = $nom;
+        $this->espece = $espece;
+        $this->poids = $poids;
+        $this->age = $age;
+        $this->regle = $regle;
+        $this->carnet = $carnet;
+        $this->vaccin_a_jour = $vaccin_a_jour;
+        $this->vermifuge_a_jour = $vermifuge_a_jour;
+        $this->dateFin = $dateFin;
+        $this->id_box = $id_box;
+
+        session_start();
+
+        $scriptEspaceClient = new ScriptEspaceClient();
+        $this->id = $scriptEspaceClient->getId();
+
+        $cnx = new Connect();
+        $conn = $cnx->connexion();
+        if ($conn->connect_error) {
+            die("" . $conn->connect_error);
+        }
+        $sqlstmt = $conn->prepare("UPDATE animal SET nom_animal=?, id_espece=?, id_proprietaire=? WHERE id_Animal=?");
+        $sqlstmt->bind_param("sssi", $nom, $espece, $this->id, $id_animal);
+        if ($sqlstmt->execute()) {
+            $dateNow = date('Y-m-d');
+            $sqlstmt4 = $conn->prepare("INSERT INTO date(Date) VALUES (?) ON DUPLICATE KEY UPDATE Date = Date");
+            $sqlstmt4->bind_param("s", $dateNow);
+            $sqlstmt4->execute();
+
+            $date_id = mysqli_insert_id($conn);
+
+            $sqlstmt3 = $conn->prepare("UPDATE affectation SET Poids=?, Age=?, Regle=?, Carnet_Vaccination=?, Vaccin_a_jour=?, Vermifuge_a_jour=?, Date_fin=?, box_id=?, Date_debut=? WHERE animal_id=?");
+            $sqlstmt3->bind_param("sssssssssi", $poids, $age, $regle, $carnet, $vaccin_a_jour, $vermifuge_a_jour, $dateFin, $id_box, $dateNow, $id_animal);
+            if ($sqlstmt3->execute()) {
+                session_start();
+                $_SESSION["ajouter"] = "Animal modifié";
+                header('location: ../View/EspaceClient/liste_animaux.php');
+            } else {
+                session_start();
+                $_SESSION["erreur"] = "Une erreur est survenue, veuillez réessayer plus tard";
+                header('location: ../View/EspaceClient/ModifierUnAnimal2.php');
+            }
+        } else {
+            session_start();
+            $_SESSION["erreur"] = "Une erreur est survenue, veuillez réessayer plus tard";
+            header('location: ../View/EspaceClient/ModifierUnAnimal2.php');
+        }
+    }
+
     public function afficherNomAnimaux(){
         $cnx = new Connect();
         $conn = $cnx->connexion();
@@ -113,8 +165,8 @@ class ScriptAnimal{
             }
         }
 
-
     }
+
     public function afficherAnimaux(){
         $cnx = new Connect();
         $conn = $cnx->connexion();
@@ -220,6 +272,5 @@ class ScriptAnimal{
         $conn->close();
         return $options ;
     }
-
 
 }
