@@ -19,7 +19,8 @@ class ScriptAnimal{
         session_start();
 
         $scriptEspaceClient = new ScriptEspaceClient();
-        $this->id = $scriptEspaceClient->getId();
+        $info = $scriptEspaceClient->getInformationsClient();
+        $this->id = $info['id'];
 
         $cnx = new Connect();
         $conn = $cnx->connexion();
@@ -81,7 +82,8 @@ class ScriptAnimal{
         session_start();
 
         $scriptEspaceClient = new ScriptEspaceClient();
-        $this->id = $scriptEspaceClient->getId();
+        $info = $scriptEspaceClient->getInformationsClient();
+        $this->id = $info['id'];
 
         $cnx = new Connect();
         $conn = $cnx->connexion();
@@ -121,7 +123,8 @@ class ScriptAnimal{
         $conn = $cnx->connexion();
 
         $scriptEspaceClient = new ScriptEspaceClient();
-        $this->id = $scriptEspaceClient->getId();
+        $info = $scriptEspaceClient->getInformationsClient();
+        $this->id = $info['id'];
 
         if($conn->connect_error){
             die("". $conn->connect_error);
@@ -172,7 +175,8 @@ class ScriptAnimal{
         $conn = $cnx->connexion();
 
         $scriptEspaceClient = new ScriptEspaceClient();
-        $this->id = $scriptEspaceClient->getId();
+        $info = $scriptEspaceClient->getInformationsClient();
+        $this->id = $info['id'];
 
         if($conn->connect_error){
             die("". $conn->connect_error);

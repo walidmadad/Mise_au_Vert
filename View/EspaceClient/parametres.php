@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+
+$scriptEspaceClient = new ScriptEspaceClient();
+$info = $scriptEspaceClient->getInformationsClient();
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -41,13 +50,7 @@
                         <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                             <li><a style='text-transform: uppercase;'>
                                     <?php
-
-                                    session_start();
-                                    include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                                    include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
-                                    $scriptEspaceClient = new ScriptEspaceClient();
-
-                                    echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
+                                    echo $info['nom'] ." " . $info['prenom'];
                                     ?>
                                 </a></li>
 

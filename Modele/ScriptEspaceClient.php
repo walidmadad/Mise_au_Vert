@@ -70,7 +70,8 @@ class ScriptEspaceClient{
                 $_SESSION['nom_client'] = $row['nom_Propietaire'];
                 $_SESSION['prenom_client'] = $row['prenom_Propietaire'];
                 $_SESSION['email_client'] = $row['email_Proprietaire'];
-                $_SESSION['date_naissance_client'] = $row['password_proprietaire'];
+                $_SESSION['date_naissance_client'] = $row['date_naissance_proprietaire'];
+                $_SESSION['password'] = $row['password_proprietaire'];
                 $_SESSION['id_client'] = $row['id_proprietaire'];
 
                 header('location: ../View/EspaceClient/espaceClient.php');
@@ -87,46 +88,48 @@ class ScriptEspaceClient{
         }
         $stmt->close();
     }
-    public function getId(){
+    public function getInformationsClient(){
         $id = isset($_SESSION['id_client']) ? $_SESSION['id_client'] : null;
-        return $id;
-    }
-    public function getNom(){
         $nom = isset($_SESSION['nom_client']) ? $_SESSION['nom_client'] : null;
-        return $nom;
-    }
-    public function getPrenom(){
         $prenom = isset($_SESSION['prenom_client']) ? $_SESSION['prenom_client'] : null;
-        return $prenom;
-    }
-    public function getEmail(){
         $email = isset($_SESSION['email_client']) ? $_SESSION['email_client'] : null;
-        return $email;
-    }
-    public function getDateNaiss(){
         $DateDeNaissance = isset($_SESSION['date_naissance_client']) ? $_SESSION['date_naissance_client'] : null;
-        return $DateDeNaissance;
+
+        $year = $this->getYear($DateDeNaissance);
+        $month = $this->getMonth($DateDeNaissance);
+        $day = $this->getDay($DateDeNaissance);
+
+        $info = array(
+            'id' => $id,
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'email'=> $email,
+            'year' =>$year,
+            "month" =>$month,
+            'day' => $day
+        );
+        return $info;
     }
-    public function getYear(){
-        $dateOfBirth = $this->getDateNaiss();
-        if (!empty($dateOfBirth)) {
-            $year = date('Y', strtotime($dateOfBirth));
-            return $year;
+
+    private function getYear($date) {
+        if ($date !== null) {
+            return date('Y', strtotime($date));
         }
+        return null;
     }
-    public function getMonth(){
-        $dateOfBirth = $this->getDateNaiss();
-        if(!empty($dateOfBirth)){
-            $month = date('M',strtotime($dateOfBirth));
-            return $month;
+
+    private function getMonth($date) {
+        if ($date !== null) {
+            return date('m', strtotime($date));
         }
+        return null;
     }
-    public function getDay(){
-        $dateOfBirth = $this->getDateNaiss();
-        if(!empty($dateOfBirth)){
-            $day = date('d',strtotime($dateOfBirth));
-            return $day;
+
+    private function getDay($date) {
+        if ($date !== null) {
+            return date('d', strtotime($date));
         }
+        return null;
     }
 
 

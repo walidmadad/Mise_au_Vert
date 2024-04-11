@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+
+session_start();
+include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
+include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
+$scriptEspaceClient = new ScriptEspaceClient();
+$info = $scriptEspaceClient->getInformationsClient();
+?><!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
@@ -14,6 +21,8 @@
                 border: 1px solid #ccc;
                 border-radius: 8px;
             }
+            #dateNaisanceMdf{display: flex; align-items: center;padding-left:2px;}
+
             h1 {
                 color: #333;
             }
@@ -23,11 +32,14 @@
             }
             input, select {
                 margin-bottom: 10px;
+                margin-left:3px ;
                 padding: 8px;
-                width: 100%;
+                width: 60%;
+                height: 60%;
                 box-sizing: border-box;
             }
             label {
+                margin-left:3px ;
                 display: inline-block;
                 margin-bottom: 5px;
             }</style>
@@ -41,13 +53,7 @@
                         <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                             <li><a style='text-transform: uppercase'>
                                     <?php
-
-                                    session_start();
-                                    include_once(realpath(__DIR__ . '/../../Modele/ScriptEspaceClient.php'));
-                                    include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
-                                    $scriptEspaceClient = new ScriptEspaceClient();
-
-                                    echo $scriptEspaceClient->getNom() ." " . $scriptEspaceClient->getPrenom();
+                                    echo $info['nom'] ." " . $info['prenom'];
                                     ?>
                                 </a></li>
 
@@ -69,17 +75,18 @@
                 <hr style="margin-bottom: 30px;">
 
                 <label for="gestion-profile_nom">Nom:</label>
-                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $scriptEspaceClient->getNom(); ?>"><br>
+                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $info['nom'] ?>"><br>
 
                 <label for="gestion-profile_prenom">Prénom:</label>
-                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $scriptEspaceClient->getPrenom(); ?>"><br>
+                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $info['prenom'] ?>">
 
-                <label align="center" style="margin-top: 30px">Date de Naissance</label>
+                <label style="text-align: center">Date de Naissance</label><br>
+                <div id="dateNaisanceMdf">
                 <label for="day">Jour:</label>
                 <select id="day" name="day">
                     <?php
                     for ($i = 1; $i <= 31; $i++) {
-                        $selected = ($scriptEspaceClient->getDay() == $i) ? "selected" : "";
+                        $selected = ($info['day'] == $i) ? "selected" : "";
                         echo "<option value=\"$i\" $selected>$i</option>";
                     }
                     ?>
@@ -95,17 +102,17 @@
                     ];
 
                     foreach ($mois as $numero => $nom) {
-                        $selected = ($scriptEspaceClient->getMonth() == $numero) ? "selected" : "";
+                        $selected = ($info['month'] == $numero) ? "selected" : "";
                         echo "<option value=\"$numero\" $selected>$nom</option>";
                     }
                     ?>
                 </select>
 
                 <label for="year">Année:</label>
-                <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $scriptEspaceClient->getYear(); ?>"><br>
-
+                <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $info['year']; ?>"><br>
+                </div>
                 <label for="gestion-profile_email">Email :</label>
-                <input type="text" id="gestion-profile_email" name="email" value="<?php echo $scriptEspaceClient->getEmail(); ?>">
+                <input type="text" id="gestion-profile_email" name="email" value="<?php echo $info['email']; ?>">
 
                 <input type="submit" id='' value='Modifier'>
             </form>
