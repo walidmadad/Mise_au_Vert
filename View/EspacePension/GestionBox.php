@@ -1,3 +1,11 @@
+<?php
+include_once(__DIR__ . "/../../Modele/ScriptBox.php");
+include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
+
+$scriptEspacePension = new ScriptEspacePension();
+
+$pensionInfo = $scriptEspacePension->getPensionInfo();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,13 +49,7 @@
                     <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                     <li><a>
                         <?php
-                        include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
-                        include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
-
-                        session_start();
-                        $ScriptEspacePension = new ScriptEspacePension();
-
-                        echo $ScriptEspacePension->getNomPension();
+                        echo $pensionInfo['nom'];
                         ?></li>
                     <br><br>
                     <li><a href="EspacePensionConnecter.php">Accueil</a><li><br>
@@ -60,19 +62,48 @@
     </div>
 </section>
 <section class="espaceClient-1">
-    <form>
-        <h1>Gestion Des Box</h1><hr>
+    <form action="../../Controller/AjoutBox.php" method="POST" id="boxForm">
+        <h1>Gestion Des Box</h1>
+        <hr>
+        <input type="hidden" name="id_pension" value="<?php echo $pensionInfo['id_pension'] ?>">
         <label for="typeGardiennage">Type Gardiennage:</label>
-        <select id="typeGardiennage">
-            <option value="option1">Hotel Cânin</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+        <select id="type_gardiennage" name="id_type_gardiennage" >
+            <option>Veuillez choisir votre Type de Gardiennage</option>
+
+            <?php
+            include_once(realpath(__DIR__ . '/../../Modele/ScriptTypeGardiennage.php'));
+            $pension = new ScriptTypeGardiennage();
+            echo $pension->afficherTypeGardiennage();
+            ?>
         </select><br>
-        <a style="margin-top:10px">Tarifs par jours (€): </a><input type="text" value=""></input>
-        <a style="margin-top:10px">Superficie Box (m²): </a><input type="text" value=""></input>
-        <input type="submit" id='update' value='Modifier'>
+        <label for="tarifs">Tarifs par jour (€):</label>
+        <input type="text" name="tarifs" id="tarifs" ><br>
+        <label for="superficie">Superficie Box (m²):</label>
+        <input type="text" name="superficie" id="superficie" ><br>
+        <input type="hidden" name="idTypeGardiennage" id="idTypeGardiennage">
+        <input type="submit" id="update" value="Modifier">
     </form>
 </section>
-<script src="script.js"></script>
+<script>
+    document.getElementById('type_gardiennage').addEventListener('change', function() {
+        var selectedOption = this.options[this.selectedIndex].value;
+        var id_pension = "<?php echo $pensionInfo['id_pension']; ?>";
+
+        // Appel AJAX pour récupérer les valeurs de tarif et de superficie
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../../Controller/AjoutBox.php?id_pension=' + id_pension + '&id_typeGardiennage=' + selectedOption, true);
+        xhr.onload = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    document.getElementById('tarifs').value = response.tarif;
+                    document.getElementById('superficie').value = response.superficie;
+                }
+            }
+        };
+        xhr.send();
+    });
+</script>
+
 </body>
 </html>

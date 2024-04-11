@@ -1,3 +1,10 @@
+<?php
+include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
+
+$scriptEspacePension = new ScriptEspacePension();
+
+$pensionInfo = $scriptEspacePension->getPensionInfo();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,13 +24,8 @@
                     <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                     <li><a>
                             <?php
-                            include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
                             include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
-
-                            session_start();
-                            $ScriptEspacePension = new ScriptEspacePension();
-
-                            echo $ScriptEspacePension->getNomPension();
+                            echo $pensionInfo['nom'];
                             ?>
                         </a></li>
                     <br><br>

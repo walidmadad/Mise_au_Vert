@@ -145,7 +145,7 @@ class ScriptEspacePension{
             die("La connexion a échoué : ". $conn->connect_error);
         }
 
-        $stmt = $conn->prepare("SELECT nom_pension, responsable_pension, adresse_pension, ville_pension, email, telephone_pension FROM pension WHERE id_pension = ?");
+        $stmt = $conn->prepare("SELECT * FROM pension WHERE id_pension = ?");
 
         $stmt->bind_param("i", $idPension);
 
@@ -161,7 +161,8 @@ class ScriptEspacePension{
                 'adresse' => $row['adresse_pension'],
                 'ville' => $row['ville_pension'],
                 'email' => $row['email'],
-                'telephone' => $row['telephone_pension']
+                'telephone' => $row['telephone_pension'],
+                'id_pension' => $row['id_pension']
             );
         } else {
             $pensionInfo = array();

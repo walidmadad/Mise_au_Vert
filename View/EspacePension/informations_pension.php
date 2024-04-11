@@ -1,12 +1,8 @@
 <?php
 include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
 
-
-
-// Créer une instance de la classe ScriptEspacePension
 $scriptEspacePension = new ScriptEspacePension();
 
-// Récupérer les informations de la pension
 $pensionInfo = $scriptEspacePension->getPensionInfo();
 ?>
 <!DOCTYPE html>
@@ -52,13 +48,8 @@ $pensionInfo = $scriptEspacePension->getPensionInfo();
                     <li><img src="../../res/person-profile-icon.png" alt="logo" id="logo"><li>
                     <li><a>
                         <?php
-                        include_once(__DIR__ . "/../../Modele/ScriptEspacePension.php");
-                        include_once(realpath(__DIR__ . '/../../Controller/Connect.php'));
-
-
                         $ScriptEspacePension = new ScriptEspacePension();
-
-                        echo $ScriptEspacePension->getNomPension();
+                        echo $pensionInfo['nom'];
                         ?></li>
                     <br><br>
                     <li><a href="EspacePensionConnecter.php">Accueil</a><li><br>
