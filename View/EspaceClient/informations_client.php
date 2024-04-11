@@ -70,46 +70,46 @@ $info = $scriptEspaceClient->getInformationsClient();
             </div>
         </section>
         <section class="espaceClient-1">
-            <form method="post" action="traitement-modification-profile.php">
+            <form id="modifier-client-form" method="post" action="/../../Controller/ModifierClient.php">
                 <h1>Gestion de profil</h1>
                 <hr style="margin-bottom: 30px;">
 
                 <label for="gestion-profile_nom">Nom:</label>
-                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $info['nom'] ?>"><br>
-
+                <input type="text" id="gestion-profile_nom" name="nom" value="<?php echo $info['nom']; ?>"><br>
+                <input type="hidden" name="id" value="<?php echo $info['id']; ?>">
                 <label for="gestion-profile_prenom">Prénom:</label>
-                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $info['prenom'] ?>">
+                <input type="text" id="gestion-profile_prenom" name="prenom" value="<?php echo $info['prenom']; ?>">
 
                 <label style="text-align: center">Date de Naissance</label><br>
                 <div id="dateNaisanceMdf">
-                <label for="day">Jour:</label>
-                <select id="day" name="day">
-                    <?php
-                    for ($i = 1; $i <= 31; $i++) {
-                        $selected = ($info['day'] == $i) ? "selected" : "";
-                        echo "<option value=\"$i\" $selected>$i</option>";
-                    }
-                    ?>
-                </select>
+                    <label for="day">Jour:</label>
+                    <select id="day" name="day">
+                        <?php
+                        for ($i = 1; $i <= 31; $i++) {
+                            $selected = ($info['day'] == $i) ? "selected" : "";
+                            echo "<option value=\"$i\" $selected>$i</option>";
+                        }
+                        ?>
+                    </select>
 
-                <label for="month">Mois:</label>
-                <select id="month" name="month">
-                    <?php
-                    $mois = [
-                        1 => "Janvier", 2 => "Février", 3 => "Mars", 4 => "Avril",
-                        5 => "Mai", 6 => "Juin", 7 => "Juillet", 8 => "Août",
-                        9 => "Septembre", 10 => "Octobre", 11 => "Novembre", 12 => "Décembre"
-                    ];
+                    <label for="month">Mois:</label>
+                    <select id="month" name="month">
+                        <?php
+                        $mois = [
+                            1 => "Janvier", 2 => "Février", 3 => "Mars", 4 => "Avril",
+                            5 => "Mai", 6 => "Juin", 7 => "Juillet", 8 => "Août",
+                            9 => "Septembre", 10 => "Octobre", 11 => "Novembre", 12 => "Décembre"
+                        ];
 
-                    foreach ($mois as $numero => $nom) {
-                        $selected = ($info['month'] == $numero) ? "selected" : "";
-                        echo "<option value=\"$numero\" $selected>$nom</option>";
-                    }
-                    ?>
-                </select>
+                        foreach ($mois as $numero => $nom) {
+                            $selected = ($info['month'] == $numero) ? "selected" : "";
+                            echo "<option value=\"$numero\" $selected>$nom</option>";
+                        }
+                        ?>
+                    </select>
 
-                <label for="year">Année:</label>
-                <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $info['year']; ?>"><br>
+                    <label for="year">Année:</label>
+                    <input type="text" id="year" name="year" placeholder="YYYY" value="<?php echo $info['year']; ?>"><br>
                 </div>
                 <label for="gestion-profile_email">Email :</label>
                 <input type="text" id="gestion-profile_email" name="email" value="<?php echo $info['email']; ?>">
@@ -117,5 +117,35 @@ $info = $scriptEspaceClient->getInformationsClient();
                 <input type="submit" id='' value='Modifier'>
             </form>
         </section>
+        <script>
+            document.getElementById('modifier-client-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var form = event.target;
+                var formData = new FormData(form);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', form.action);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            // Mettre à jour les informations sur la page
+                            document.getElementById('gestion-profile_nom').value = response.data.nom;
+                            document.getElementById('gestion-profile_prenom').value = response.data.prenom;
+                            document.getElementById('gestion-profile_email').value = response.data.email;
+                            document.getElementById('day').value = response.data.day;
+                            document.getElementById('month').value = response.data.month;
+                            document.getElementById('year').value = response.data.year;
+                        } else {
+                            alert('Erreur lors de la modification des informations.');
+                        }
+                    } else {
+                        alert('Erreur lors de la requête.');
+                    }
+                };
+                xhr.send(formData);
+            });
+        </script>
     </body>
 </html>

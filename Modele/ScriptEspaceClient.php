@@ -3,7 +3,7 @@ include_once(realpath(__DIR__ . '/../Controller/Connect.php'));
 
 
 class ScriptEspaceClient{
-
+    private $id,$nom,$prenom,$email,$date,$date_de_naissance;
 
     private $nom_client;
     private $id_client;
@@ -88,6 +88,7 @@ class ScriptEspaceClient{
         }
         $stmt->close();
     }
+
     public function getInformationsClient(){
         $id = isset($_SESSION['id_client']) ? $_SESSION['id_client'] : null;
         $nom = isset($_SESSION['nom_client']) ? $_SESSION['nom_client'] : null;
@@ -110,6 +111,13 @@ class ScriptEspaceClient{
         );
         return $info;
     }
+    public function setInformationsClient($id, $nom, $prenom, $email, $date_naissance) {
+        $_SESSION['id_client'] = $id;
+        $_SESSION['nom_client'] = $nom;
+        $_SESSION['prenom_client'] = $prenom;
+        $_SESSION['email_client'] = $email;
+        $_SESSION['date_naissance_client'] = $date_naissance;
+    }
 
     private function getYear($date) {
         if ($date !== null) {
@@ -131,6 +139,18 @@ class ScriptEspaceClient{
         }
         return null;
     }
+    public function modifierInfoClient($id, $nom, $prenom, $year, $month, $day, $email){
 
+        $cnx = new Connect();
+        $conn = $cnx->connexion();
+        if($conn->connect_error) {
+            die("". $conn->connect_error);
+        }
+        $dateNaissance = $year . "-" . $month ."-" .$day;
+        $sqlStmt = $conn->prepare("UPDATE proprietaire SET nom_Propietaire = ?, prenom_Propietaire = ?, email_Proprietaire = ?, date_naissance_proprietaire = ? WHERE id_proprietaire = ?");
+        $sqlStmt->bind_param('ssssi',$nom,$prenom,$email,$dateNaissance,$id);
+        $clientUpdated = $sqlStmt->execute();
+        return $clientUpdated;
+    }
 
 }
